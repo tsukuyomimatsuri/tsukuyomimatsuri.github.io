@@ -260,6 +260,30 @@ section + section{ border-top:1px solid rgba(198,162,92,.10); }
 .land-note h4{ font-size:1rem; letter-spacing:.08em; color:var(--paper); }
 .land-note p{ color:var(--mist); font-size:.9rem; line-height:2; margin-top:.8em; }
 
+/* strata — the layers of time under this ground */
+.strata{ list-style:none; margin:0; padding:0; border-top:1px solid var(--rule); }
+.strata li{
+  display:grid; grid-template-columns:minmax(0,200px) minmax(0,1fr);
+  gap:clamp(12px,2.6vw,34px);
+  padding:clamp(16px,2.4vw,24px) 0;
+  border-bottom:1px solid rgba(198,162,92,.12);
+  align-items:baseline;
+}
+.strata .era{
+  font-family:var(--f-disp); color:var(--gold);
+  font-size:.98rem; letter-spacing:.1em; line-height:1.7;
+}
+.strata .era small{
+  display:block; font-family:var(--f-lat); font-size:.6rem;
+  letter-spacing:.22em; text-transform:uppercase; color:var(--mist); margin-top:.45em;
+}
+.strata .txt{ color:var(--paper); font-size:.94rem; line-height:2.05; }
+.strata .txt em{ font-style:normal; color:var(--moon); }
+.strata li.now{ border-bottom:none; }
+.strata li.now .era{ color:#fff; }
+.strata li.now .txt{ color:var(--moon); font-family:var(--f-disp); letter-spacing:.06em; }
+@media (max-width:640px){ .strata li{ grid-template-columns:1fr; gap:.5em; } }
+
 /* ================= lineup ================= */
 .day-cols{ display:grid; gap:clamp(24px,3.4vw,40px); grid-template-columns:repeat(3,minmax(0,1fr)); align-items:start; }
 .day-head{
@@ -671,24 +695,31 @@ section[id]{ scroll-margin-top:64px; }
     <div>
       <p class="eyebrow">Full Moon · 満月<span class="jp">調和・感謝</span></p>
       <h2 class="sec-title">木の根という土地で。</h2>
+      <p class="sec-lede">この一角の地面の下には、八千年分の時間が積もっています。</p>
     </div>
 
     <div class="land-grid">
       <div>
         <p style="color:var(--paper);">
-          会場となる木の根の地は、<strong style="color:var(--moon);font-weight:400;">木の根遺跡</strong>と呼ばれています。
-          縄文の時代から、人々がこの土地で平和に暮らしてきた歴史がある場所。
-          そして、三里塚闘争 ── 空港建設をめぐる土地の争い ── のなかを生き延びてきた土地でもあります。
+          会場となる木の根の地には、<strong style="color:var(--moon);font-weight:400;">木の根遺跡</strong>があります。
+          いま成田空港の敷地となっている一帯、調査の記録では「空港 No.6 遺跡」。
+          ここから出土したのは、<strong style="color:var(--moon);font-weight:400;">約八千年前</strong>、
+          縄文時代早期のはじまりの土偶でした。
         </p>
         <p style="color:var(--paper);margin-top:1.6em;">
-          月詠祭は、この土地が積み重ねてきた時間に頭を垂れ、
-          いまここで愛と平和に生きられることへの感謝を捧げ続ける祭です。
-          その感謝を、来場するみなさんにも身体で感じてもらえたら。
+          つまりこの土地には、少なくとも八千年、人が暮らしてきた時間が積もっている。
+          畑をひらいた人がいて、その前にも、火を囲み、祈り、
+          小さなかたちを手のひらでこねた誰かがいた。
         </p>
         <p style="color:var(--paper);margin-top:1.6em;">
-          世界と日本を結ぶ玄関口、成田から。
-          日本が大切にしてきた精神や文化を、懐かしいものとして残すだけではなく、
-          <strong style="color:var(--moon);font-weight:400;">今を生きる文化</strong>として、世界へ。
+          そして近代。ここは宮内庁下総御料牧場の一部となり、戦後は開拓者が鍬を入れ、
+          やがて新しい空港の建設地に定められます。
+          三里塚闘争 ── 空港建設をめぐる、土地と人の長い時間です。
+        </p>
+        <p style="color:var(--paper);margin-top:1.6em;">
+          いま、この一角は空港の敷地のただなかに残っています。
+          鉄道も、県道も、この土地を避けて曲がっている。
+          <strong style="color:var(--moon);font-weight:400;">地図の上でそこだけ道が迂回しているのは、ここに残ろうとした人たちがいたから</strong>です。
         </p>
       </div>
 
@@ -701,8 +732,72 @@ section[id]{ scroll-margin-top:64px; }
           いま在る平和への<strong style="color:#e8a882;font-weight:400;">感謝</strong>。
           その文脈でのみ、私たちはこの歴史に向き合います。
         </p>
+        <p>
+          誰かを責めるためではなく、
+          この土地の上でいま笑い、音を鳴らし、火を囲めることの重さを、
+          忘れないために。
+        </p>
       </div>
     </div>
+
+    <ol class="strata">
+      <li>
+        <span class="era">約八千年前<small>Early Jomon</small></span>
+        <span class="txt">縄文時代早期のはじまり。この地に人が暮らす。のちに<em>木の根遺跡</em>と呼ばれる場所から、土偶が出土する。</span>
+      </li>
+      <li>
+        <span class="era">戦前<small>Imperial Pasture</small></span>
+        <span class="txt">宮内庁下総御料牧場の一部となる。広い草地と風の土地。</span>
+      </li>
+      <li>
+        <span class="era">戦後<small>Reclamation</small></span>
+        <span class="txt">開拓者が入植し、手で畑をひらく。田畑と、暮らしと、集落がここにできる。</span>
+      </li>
+      <li>
+        <span class="era">一九六六年<small>1966</small></span>
+        <span class="txt">この一帯が、新しい国際空港の建設地に定められる。</span>
+      </li>
+      <li>
+        <span class="era">それからの歳月<small>Sanrizuka</small></span>
+        <span class="txt">三里塚闘争。土地に残ろうとする人たちと、空港をつくろうとする力。木の根にも小屋が建ち、長い時間が流れた。</span>
+      </li>
+      <li>
+        <span class="era">いま<small>Today</small></span>
+        <span class="txt">空港の敷地のただなかに、この一角が残っている。鉄道も県道も、ここを避けて曲がっている。</span>
+      </li>
+      <li class="now">
+        <span class="era">2026.09.26 — 27<small>Tsukuyomi Matsuri</small></span>
+        <span class="txt">その土地の上で、火を焚き、竹に灯りをともし、月を見上げる。</span>
+      </li>
+    </ol>
+
+    <div class="ticket">
+      <div class="chip">
+        <div class="n" style="font-family:var(--f-disp);">七</div>
+        <div class="u">点 の 土 偶</div>
+        <span class="lim">c. 8,000 years ago</span>
+      </div>
+      <div>
+        <p style="color:var(--paper);">
+          一辺 2〜4.5cm。三角形や扇形をした、板状の小さなかたち。
+          頭も脚もはっきりとは読み取れない。けれど、乳房のような突起を持つものがある。
+        </p>
+        <p style="color:var(--mist);margin-top:1.4em;font-size:.9rem;">
+          一九九六年、千葉県の重要文化財に指定されました。これが見つかるまで、
+          土偶の起こりはもっと新しいと考えられていた。関東でもっとも古い土偶です。
+        </p>
+        <p style="color:var(--moon);margin-top:1.4em;font-family:var(--f-disp);letter-spacing:.06em;">
+          八千年前、この土地の誰かが、祈りのかたちを手のひらの中でこねていた。
+          私たちは、その続きに立っています。
+        </p>
+      </div>
+    </div>
+
+    <p class="narrow" style="text-align:center;font-family:var(--f-disp);color:var(--moon);font-size:clamp(1rem,2.2vw,1.15rem);letter-spacing:.08em;line-height:2.3;">
+      世界と日本を結ぶ玄関口、成田から。<br>
+      日本が大切にしてきた精神や文化を、懐かしいものとして残すだけではなく、<br>
+      今を生きる文化として、世界へ。
+    </p>
   </div>
 </section>
 
