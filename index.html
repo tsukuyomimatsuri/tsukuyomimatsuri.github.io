@@ -1,462 +1,1149 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>月詠祭 Vol.3 ｜ 2026.9.26-27 千葉・木の根遺跡</title>
-<meta name="description" content="月詠祭 Vol.3｜2026年9月26日(土)〜27日(日)、千葉県成田市・木の根ペンションにて開催。入場無料。作る側も来る側も、全てアーティスト。">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>月詠祭 TSUKUYOMI MATSURI ｜ 2026.9.26-27 千葉・成田 木の根</title>
+<meta name="description" content="月詠祭 TSUKUYOMI MATSURI｜2026年9月26日(土)〜27日(日)、千葉県成田市・木の根ペンションにて開催。入場無料・雨天決行。千葉開府900年、月を詠み、心を結ぶ祈りの二日間。">
+<meta name="theme-color" content="#05091a">
+<link rel="canonical" href="https://tsukuyomimatsuri.com/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="月詠祭 Vol.3 ｜ 2026.9.26-27">
-<meta property="og:description" content="千葉・木の根遺跡で二日間。作る側も来る側も、全てアーティスト。入場無料。">
-<meta property="og:site_name" content="月詠祭">
-<meta name="theme-color" content="#0a1026">
+<meta property="og:url" content="https://tsukuyomimatsuri.com/">
+<meta property="og:site_name" content="月詠祭 TSUKUYOMI MATSURI">
+<meta property="og:title" content="月詠祭 TSUKUYOMI MATSURI ｜ 2026.9.26-27">
+<meta property="og:description" content="千葉県成田市・木の根ペンション。入場無料。月を詠み、心を結ぶ、祈りの二日間。">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2305091a'/%3E%3Cpath d='M62 20a32 32 0 1 0 0 60 34 34 0 0 1 0-60z' fill='%23c6a25c'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230a1026'/%3E%3Cpath d='M62 20a32 32 0 1 0 0 60 34 34 0 0 1 0-60z' fill='%23d9b45a'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&display=swap">
+
 <style>
-  :root{
-    --ink:#0a1026;
-    --ink-2:#111a3d;
-    --ink-3:#18234f;
-    --gold:#d9b45a;
-    --gold-soft:#e8cf94;
-    --paper:#f4efe4;
-    --muted:rgba(244,239,228,.68);
-    --line:rgba(217,180,90,.28);
-    --serif:"Shippori Mincho",'Hiragino Mincho ProN',"Yu Mincho",serif;
-    --sans:"Zen Kaku Gothic New",'Hiragino Sans',"Yu Gothic",sans-serif;
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{
-    margin:0;
-    background:var(--ink);
-    color:var(--paper);
-    font-family:var(--sans);
-    line-height:1.9;
-    font-size:16px;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
-  img{max-width:100%}
-  a{color:var(--gold-soft)}
+/* ------------------------------------------------------------------
+   月詠祭 TSUKUYOMI MATSURI — 2026.09.26–27 / 木の根ペンション, 成田
+   Single committed night palette: 深藍 (deep indigo) × 金 (gold).
+   Every color painted explicitly so the page holds on any host ground.
+------------------------------------------------------------------- */
+:root{
+  --ink:        #05091a;   /* 深藍 — the night ground */
+  --ink-2:      #0a1129;   /* raised panel */
+  --ink-3:      #101a38;   /* hairline / inset */
+  --gold:       #c6a25c;   /* 金 — primary accent */
+  --gold-soft:  #8d7440;   /* recessed gold, rules and glyph strokes */
+  --moon:       #f2e7c6;   /* moonlight — display headings */
+  --paper:      #e4e2d9;   /* 和紙 — body text */
+  --mist:       #8590ab;   /* indigo-biased neutral — secondary text */
+  --shu:        #a8412b;   /* 朱 — used once, for the fire */
+  --rule:       rgba(198,162,92,.22);
+  --panel:      rgba(255,255,255,.028);
 
-  /* ---------- header ---------- */
-  header{
-    position:fixed;top:0;left:0;right:0;z-index:50;
-    display:flex;align-items:center;justify-content:space-between;
-    padding:14px 20px;
-    background:linear-gradient(to bottom,rgba(10,16,38,.92),rgba(10,16,38,0));
-    backdrop-filter:blur(6px);
-  }
-  header .mark{font-family:var(--serif);font-weight:800;letter-spacing:.18em;color:var(--gold);font-size:15px}
-  nav{display:flex;gap:18px}
-  nav a{
-    color:var(--muted);text-decoration:none;font-size:13px;letter-spacing:.08em;
-    padding-bottom:2px;border-bottom:1px solid transparent;transition:.2s;
-  }
-  nav a:hover{color:var(--gold);border-color:var(--line)}
-  @media(max-width:720px){nav{display:none}}
+  --f-disp: "Shippori Mincho B1", "Yu Mincho", "Hiragino Mincho ProN", serif;
+  --f-lat:  "Cormorant Garamond", "Shippori Mincho B1", Georgia, serif;
+  --f-body: "Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
 
-  /* ---------- hero ---------- */
-  .hero{
-    position:relative;min-height:100svh;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    text-align:center;padding:120px 20px 80px;
-    background:
-      radial-gradient(1000px 620px at 50% 8%,rgba(217,180,90,.13),transparent 62%),
-      radial-gradient(760px 520px at 78% 88%,rgba(60,90,180,.20),transparent 66%),
-      linear-gradient(#070c1c,#0d1531 55%,#0a1026);
-    overflow:hidden;
-  }
-  .moon{
-    position:absolute;top:12vh;left:50%;transform:translateX(-50%);
-    width:min(58vw,340px);aspect-ratio:1;border-radius:50%;
-    background:radial-gradient(circle at 36% 34%,#fdf6e2,#e6cf98 46%,#c9a765 70%,#8d7238 100%);
-    box-shadow:0 0 90px rgba(217,180,90,.30),0 0 200px rgba(217,180,90,.16);
-    opacity:.30;
-  }
-  .torii{position:absolute;bottom:-2px;left:0;right:0;width:100%;opacity:.5}
-  .hero-inner{position:relative;z-index:2;max-width:820px}
-  .vol{
-    font-family:var(--serif);letter-spacing:.44em;font-size:12px;color:var(--gold);
-    margin:0 0 22px;text-indent:.44em;
-  }
-  h1{
-    font-family:var(--serif);font-weight:800;margin:0;
-    font-size:clamp(52px,15vw,132px);letter-spacing:.14em;text-indent:.14em;
-    line-height:1.12;
-    background:linear-gradient(180deg,#fdf6e2 8%,var(--gold) 62%,#a5813a 100%);
-    -webkit-background-clip:text;background-clip:text;color:transparent;
-  }
-  .tagline{
-    font-family:var(--serif);margin:24px 0 0;font-size:clamp(15px,4vw,21px);
-    letter-spacing:.14em;color:var(--paper);
-  }
-  .hero-meta{
-    margin-top:40px;display:flex;flex-direction:column;gap:8px;align-items:center;
-  }
-  .dates{
-    font-family:var(--serif);font-size:clamp(19px,5.4vw,30px);letter-spacing:.1em;color:var(--gold-soft);
-  }
-  .hero-meta .place{font-size:13.5px;color:var(--muted);letter-spacing:.08em}
-  .badge{
-    display:inline-block;margin-top:20px;padding:7px 20px;
-    border:1px solid var(--line);border-radius:999px;
-    font-size:12.5px;letter-spacing:.2em;color:var(--gold);text-indent:.2em;
-  }
-  .scroll{
-    position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;
-    font-size:10px;letter-spacing:.3em;color:var(--muted);text-indent:.3em;
-  }
-  .scroll::after{
-    content:"";display:block;width:1px;height:38px;margin:10px auto 0;
-    background:linear-gradient(var(--line),transparent);
-  }
+  --wrap: 1080px;
+  --gut: clamp(20px, 5vw, 56px);
+  color-scheme: dark;
+}
 
-  /* ---------- layout ---------- */
-  section{padding:96px 20px;position:relative}
-  .wrap{max-width:900px;margin:0 auto}
-  .sec-title{
-    font-family:var(--serif);font-size:12px;letter-spacing:.4em;color:var(--gold);
-    text-indent:.4em;margin:0 0 10px;text-align:center;
-  }
-  .sec-head{
-    font-family:var(--serif);font-size:clamp(25px,6.2vw,36px);letter-spacing:.12em;
-    text-align:center;margin:0 0 52px;font-weight:600;
-  }
-  .sec-head::after{
-    content:"";display:block;width:44px;height:1px;background:var(--gold);
-    margin:22px auto 0;opacity:.6;
-  }
-  .alt{background:linear-gradient(#0a1026,#0d1430 50%,#0a1026)}
+*{ box-sizing:border-box; }
+img{ max-width:100%; }
+[hidden]{ display:none !important; }
 
-  /* ---------- concept ---------- */
-  .lead{
-    font-family:var(--serif);text-align:center;
-    font-size:clamp(17px,4.6vw,25px);line-height:2.2;letter-spacing:.1em;margin:0 0 34px;
-  }
-  .body-text{color:var(--muted);font-size:15px;line-height:2.15;letter-spacing:.03em}
-  .body-text p{margin:0 0 18px}
-  .body-text p:last-child{margin-bottom:0}
-  .words{
-    display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:40px 0 8px;
-  }
-  .words span{
-    font-family:var(--serif);font-size:15px;letter-spacing:.2em;color:var(--gold-soft);
-    border:1px solid var(--line);border-radius:2px;padding:9px 20px;text-indent:.2em;
-  }
+body{
+  margin:0;
+  background:var(--ink);
+  color:var(--paper);
+  font-family:var(--f-body);
+  font-weight:300;
+  font-size:clamp(14.5px,.4vw + 13.5px,16px);
+  line-height:2;
+  letter-spacing:.03em;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
 
-  /* ---------- info table ---------- */
-  .info{border-top:1px solid var(--line)}
-  .info div{
-    display:flex;gap:20px;padding:17px 4px;border-bottom:1px solid var(--line);
-    font-size:14.5px;align-items:baseline;
-  }
-  .info dt,.info .k{
-    font-family:var(--serif);color:var(--gold);letter-spacing:.16em;
-    flex:0 0 92px;font-size:13px;
-  }
-  .info .v{flex:1;color:var(--paper);line-height:1.95}
-  .info .v small{display:block;color:var(--muted);font-size:12.5px;margin-top:4px;line-height:1.8}
-  @media(max-width:560px){
-    .info div{flex-direction:column;gap:4px}
-    .info dt,.info .k{flex:none}
-  }
+/* faint 青海波 (seigaiha) ground, and a cold star haze */
+body::before{
+  content:"";
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  background:
+    radial-gradient(900px 620px at 78% -8%, rgba(120,150,220,.13), transparent 70%),
+    radial-gradient(700px 500px at 8% 42%, rgba(90,70,160,.10), transparent 72%),
+    radial-gradient(1000px 700px at 50% 108%, rgba(198,162,92,.07), transparent 70%);
+}
 
-  /* ---------- artists ---------- */
-  .artists{
-    display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
-    gap:1px;background:var(--line);border:1px solid var(--line);
-  }
-  .artists li{
-    list-style:none;background:#0b1229;padding:26px 18px;text-align:center;
-    transition:background .25s;
-  }
-  .artists li:hover{background:#101a3d}
-  .artists .name{
-    font-family:var(--serif);font-size:17px;letter-spacing:.06em;color:var(--paper);
-    display:block;line-height:1.5;
-  }
-  .artists .role{
-    display:block;margin-top:8px;font-size:11.5px;letter-spacing:.14em;color:var(--gold);opacity:.85;
-  }
-  .note{
-    text-align:center;color:var(--muted);font-size:12.5px;margin-top:26px;letter-spacing:.05em;
-  }
+.veil{
+  position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.5;
+  background-image:
+    radial-gradient(circle at 50% 100%, transparent 32.5%, rgba(198,162,92,.14) 33%, transparent 33.6%),
+    radial-gradient(circle at 50% 100%, transparent 65.5%, rgba(198,162,92,.10) 66%, transparent 66.6%),
+    radial-gradient(circle at 50% 100%, transparent 98.5%, rgba(198,162,92,.07) 99%, transparent 99.6%);
+  background-size:72px 36px;
+  background-position:0 0;
+  mask-image:linear-gradient(180deg, transparent, #000 18%, #000 82%, transparent);
+  -webkit-mask-image:linear-gradient(180deg, transparent, #000 18%, #000 82%, transparent);
+}
 
-  /* ---------- vendors ---------- */
-  .cat{margin-bottom:34px}
-  .cat h3{
-    font-family:var(--serif);font-size:14px;letter-spacing:.24em;color:var(--gold);
-    margin:0 0 14px;padding-bottom:9px;border-bottom:1px solid var(--line);text-indent:.24em;
-  }
-  .cat ul{margin:0;padding:0;display:flex;flex-wrap:wrap;gap:9px}
-  .cat li{
-    list-style:none;font-size:13.5px;color:var(--paper);
-    background:rgba(217,180,90,.07);border:1px solid rgba(217,180,90,.18);
-    padding:7px 15px;border-radius:2px;
-  }
-  .cat li em{font-style:normal;color:var(--muted);font-size:11.5px;margin-left:6px}
+main, header, footer{ position:relative; z-index:1; }
 
-  /* ---------- access ---------- */
-  .warn{
-    border:1px solid rgba(217,180,90,.4);background:rgba(217,180,90,.07);
-    padding:22px 24px;margin:0 0 30px;border-radius:3px;
-  }
-  .warn strong{
-    display:block;font-family:var(--serif);color:var(--gold);letter-spacing:.14em;
-    font-size:15px;margin-bottom:10px;
-  }
-  .warn p{margin:0;font-size:14px;color:var(--paper);line-height:2}
-  .warn ul{margin:12px 0 0;padding-left:1.1em;color:var(--muted);font-size:13.5px;line-height:2}
+.wrap{ width:min(var(--wrap), 100%); margin-inline:auto; padding-inline:var(--gut); }
+.narrow{ width:min(660px,100%); margin-inline:auto; }
 
-  /* ---------- notes ---------- */
-  .notes{margin:0;padding:0}
-  .notes li{
-    list-style:none;padding:15px 0 15px 26px;border-bottom:1px solid var(--line);
-    font-size:14.5px;position:relative;line-height:1.95;
-  }
-  .notes li::before{
-    content:"";position:absolute;left:4px;top:26px;width:6px;height:6px;
-    border-radius:50%;background:var(--gold);opacity:.75;
-  }
-  .notes li small{display:block;color:var(--muted);font-size:12.5px;margin-top:3px}
+/* ---------- type ---------- */
+h1,h2,h3,h4{ font-family:var(--f-disp); font-weight:600; color:var(--moon); text-wrap:balance; margin:0; line-height:1.5; }
+p{ margin:0; }
 
-  /* ---------- footer ---------- */
-  footer{
-    padding:70px 20px 46px;text-align:center;
-    border-top:1px solid var(--line);
-    background:linear-gradient(#080d1f,#05091a);
-  }
-  .f-mark{font-family:var(--serif);font-size:22px;letter-spacing:.34em;color:var(--gold);text-indent:.34em}
-  .f-sub{font-family:var(--serif);font-size:12.5px;letter-spacing:.2em;color:var(--muted);margin-top:14px;text-indent:.2em}
-  .f-contact{margin-top:28px;font-size:13.5px;color:var(--muted)}
-  .f-contact a{color:var(--gold-soft);text-decoration:none;border-bottom:1px solid var(--line)}
-  .copy{margin-top:34px;font-size:11px;letter-spacing:.16em;color:rgba(244,239,228,.36)}
+.lat{
+  font-family:var(--f-lat);
+  font-weight:300;
+  letter-spacing:.34em;
+  text-transform:uppercase;
+  color:var(--gold);
+}
 
-  /* ---------- reveal ---------- */
-  .rv{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s ease}
-  .rv.in{opacity:1;transform:none}
-  @media(prefers-reduced-motion:reduce){
-    .rv{opacity:1;transform:none;transition:none}
-    html{scroll-behavior:auto}
-  }
+.eyebrow{
+  display:flex; align-items:center; gap:.85em;
+  font-family:var(--f-lat); font-weight:400;
+  font-size:.78rem; letter-spacing:.32em; text-transform:uppercase;
+  color:var(--gold);
+}
+.eyebrow .jp{
+  font-family:var(--f-body); font-size:.72rem; letter-spacing:.24em;
+  color:var(--mist); text-transform:none;
+}
+.eyebrow::after{
+  content:""; flex:1; height:1px;
+  background:linear-gradient(90deg, var(--rule), transparent);
+}
+
+.sec-title{ font-size:clamp(1.55rem,3.2vw,2.35rem); letter-spacing:.09em; margin-top:.55em; }
+.sec-lede{ color:var(--mist); margin-top:1.1em; max-width:60ch; }
+
+/* ---------- section rhythm ---------- */
+section{ padding-block:clamp(64px,9vw,120px); }
+section + section{ border-top:1px solid rgba(198,162,92,.10); }
+.stack{ display:flex; flex-direction:column; gap:clamp(28px,4vw,52px); }
+
+/* ================= HERO ================= */
+.hero{
+  position:relative;
+  padding-block:clamp(72px,11vw,132px) clamp(56px,8vw,96px);
+  overflow:hidden;
+  border-bottom:1px solid rgba(198,162,92,.14);
+}
+.moon{
+  position:absolute;
+  right:clamp(-90px,-4vw,-30px); top:clamp(24px,6vw,60px);
+  width:clamp(200px,26vw,330px); aspect-ratio:1; border-radius:50%;
+  background:
+    radial-gradient(circle at 62% 30%, rgba(255,255,255,.10) 0 8%, transparent 9%),
+    radial-gradient(circle at 40% 58%, rgba(120,110,86,.28) 0 6%, transparent 7%),
+    radial-gradient(circle at 54% 72%, rgba(120,110,86,.22) 0 9%, transparent 10%),
+    radial-gradient(circle at 30% 34%, rgba(120,110,86,.20) 0 5%, transparent 6%),
+    radial-gradient(circle at 38% 32%, #fbf3dc 0%, #ecdcb0 42%, #c9ab72 74%, #8d7440 100%);
+  box-shadow:0 0 90px 24px rgba(220,190,120,.10), 0 0 220px 90px rgba(120,150,220,.06);
+  opacity:.62;
+  animation:breathe 22s ease-in-out infinite;
+}
+@keyframes breathe{ 0%,100%{ opacity:.56; } 50%{ opacity:.7; } }
+
+.hero-inner{ position:relative; }
+.hero .kanji{
+  font-family:var(--f-disp); font-weight:800;
+  font-size:clamp(3.4rem,13vw,8.2rem);
+  line-height:1.02; letter-spacing:.05em;
+  color:#fff;
+  text-shadow:0 0 40px rgba(220,200,150,.28);
+  margin:0;
+}
+.hero .romaji{ font-size:clamp(.72rem,1.6vw,1rem); margin-top:1.4em; }
+.hero .anniv{
+  margin-top:1.1em; font-family:var(--f-lat); font-weight:300;
+  letter-spacing:.22em; font-size:clamp(.7rem,1.5vw,.9rem); color:var(--mist);
+}
+.hero .anniv b{ color:var(--gold); font-weight:400; }
+
+.dates{
+  margin-top:clamp(28px,4vw,44px);
+  display:flex; flex-wrap:wrap; align-items:baseline; gap:.3em 1em;
+  font-family:var(--f-lat); font-weight:400;
+  font-size:clamp(2rem,6.4vw,3.6rem); letter-spacing:.06em;
+  color:var(--moon); font-variant-numeric:tabular-nums;
+}
+.dates .dow{ font-size:.38em; letter-spacing:.3em; color:var(--gold); }
+.dates .dash{ color:var(--gold-soft); }
+
+.hero-meta{
+  margin-top:clamp(22px,3vw,34px);
+  display:flex; flex-wrap:wrap; gap:.6em 1.6em; align-items:center;
+  color:var(--paper); font-size:.95rem;
+}
+.hero-meta .sep{ color:var(--gold-soft); }
+.free{
+  display:inline-block; margin-top:clamp(24px,3.4vw,36px);
+  border:1px solid var(--gold); color:var(--gold);
+  padding:.62em 1.9em; letter-spacing:.42em; text-indent:.42em;
+  font-family:var(--f-disp); font-size:clamp(.95rem,2.1vw,1.15rem);
+}
+.free small{
+  display:block; font-family:var(--f-lat); font-size:.52em;
+  letter-spacing:.28em; text-indent:.28em; color:var(--mist); margin-top:.5em;
+}
+
+/* ================= 序 — the poem ================= */
+.jo{ text-align:center; }
+.jo .verse{
+  font-family:var(--f-disp); font-weight:500;
+  font-size:clamp(1rem,2.2vw,1.2rem); line-height:2.5;
+  color:var(--paper); letter-spacing:.06em;
+}
+.jo .verse + .verse{ margin-top:2.1em; }
+.jo .verse em{ font-style:normal; color:var(--moon); }
+.jo .kicker{
+  font-family:var(--f-disp); font-weight:700;
+  font-size:clamp(1.35rem,3.6vw,2rem); color:var(--moon);
+  letter-spacing:.12em; line-height:1.8;
+}
+.jo .rule{
+  width:1px; height:clamp(48px,7vw,80px); margin:0 auto;
+  background:linear-gradient(180deg, transparent, var(--gold-soft), transparent);
+}
+
+/* ================= moon-phase key ================= */
+.phases{
+  display:grid; gap:clamp(14px,2.2vw,22px);
+  grid-template-columns:repeat(5, minmax(0,1fr));
+}
+.phase{
+  text-align:center; padding:clamp(16px,2.4vw,24px) .5rem;
+  background:var(--panel); border:1px solid rgba(198,162,92,.14);
+}
+.phase svg{ display:block; margin:0 auto .9em; width:clamp(30px,4.4vw,42px); height:auto; }
+.phase .n{ font-family:var(--f-disp); font-size:clamp(.9rem,1.9vw,1.05rem); color:var(--moon); letter-spacing:.1em; }
+.phase .m{ display:block; margin-top:.5em; color:var(--gold); font-size:.82rem; letter-spacing:.14em; }
+.phase .e{ display:block; margin-top:.6em; font-family:var(--f-lat); font-size:.6rem; letter-spacing:.2em; text-transform:uppercase; color:var(--mist); }
+
+.pillars{ display:grid; gap:clamp(18px,2.6vw,28px); grid-template-columns:repeat(4,minmax(0,1fr)); }
+.pillar h4{ font-size:1.02rem; letter-spacing:.09em; }
+.pillar .e{ display:block; font-family:var(--f-lat); font-size:.62rem; letter-spacing:.24em; text-transform:uppercase; color:var(--gold); margin-bottom:.7em; }
+.pillar p{ color:var(--mist); font-size:.9rem; line-height:1.95; margin-top:.7em; }
+
+/* ================= ONE CIRCLE ================= */
+.circle-wrap{
+  display:grid; gap:clamp(32px,5vw,64px);
+  grid-template-columns:minmax(0,1fr) minmax(0,320px);
+  align-items:center;
+}
+.enso{
+  position:relative; aspect-ratio:1; width:100%; max-width:320px; margin-inline:auto;
+  border:2px solid var(--gold); border-radius:50%;
+  display:grid; place-content:center; text-align:center;
+  box-shadow:inset 0 0 60px rgba(198,162,92,.10), 0 0 60px rgba(198,162,92,.07);
+}
+.enso .wa{ font-family:var(--f-disp); font-weight:800; font-size:clamp(3.4rem,9vw,5rem); color:var(--gold); line-height:1; }
+.enso .cap{ font-family:var(--f-lat); font-size:.66rem; letter-spacing:.3em; text-transform:uppercase; color:var(--mist); margin-top:1.1em; }
+
+.verbs{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1px; background:rgba(198,162,92,.16); border:1px solid rgba(198,162,92,.16); }
+.verb{ background:var(--ink); padding:clamp(14px,2vw,20px) .6rem; text-align:center; }
+.verb .j{ font-family:var(--f-disp); font-size:1.02rem; color:var(--moon); letter-spacing:.1em; }
+.verb .e{ display:block; font-family:var(--f-lat); font-size:.58rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); margin-top:.6em; }
+
+/* ================= land ================= */
+.land-grid{ display:grid; gap:clamp(26px,4vw,48px); grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); }
+.land-note{
+  border-left:2px solid var(--shu);
+  padding:clamp(16px,2.4vw,22px) clamp(18px,2.6vw,26px);
+  background:rgba(168,65,43,.07);
+}
+.land-note h4{ font-size:1rem; letter-spacing:.08em; color:var(--paper); }
+.land-note p{ color:var(--mist); font-size:.9rem; line-height:2; margin-top:.8em; }
+
+/* ================= lineup ================= */
+.day-cols{ display:grid; gap:clamp(24px,3.4vw,40px); grid-template-columns:repeat(3,minmax(0,1fr)); align-items:start; }
+.day-head{
+  display:flex; align-items:baseline; gap:.7em;
+  padding-bottom:.8em; border-bottom:1px solid var(--rule); margin-bottom:1.2em;
+}
+.day-head .d{ font-family:var(--f-lat); font-size:1.5rem; letter-spacing:.1em; color:var(--moon); font-variant-numeric:tabular-nums; }
+.day-head .w{ font-family:var(--f-lat); font-size:.66rem; letter-spacing:.26em; text-transform:uppercase; color:var(--gold); }
+.acts{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.85em; }
+.acts li{ font-family:var(--f-disp); font-size:clamp(1rem,2vw,1.12rem); color:var(--moon); letter-spacing:.05em; line-height:1.6; }
+.acts li span{ display:block; font-family:var(--f-body); font-size:.76rem; letter-spacing:.1em; color:var(--mist); margin-top:.25em; }
+.host-note{
+  margin-top:clamp(26px,3.4vw,38px); padding-top:1.4em; border-top:1px solid var(--rule);
+  display:flex; flex-wrap:wrap; gap:.6em 1.4em; align-items:baseline;
+}
+.host-note .k{ font-family:var(--f-lat); font-size:.66rem; letter-spacing:.26em; text-transform:uppercase; color:var(--gold); }
+.host-note .v{ font-family:var(--f-disp); font-size:1.05rem; color:var(--moon); letter-spacing:.06em; }
+
+/* ================= timetable ================= */
+.tt-grid{ display:grid; gap:clamp(26px,4vw,52px); grid-template-columns:repeat(2,minmax(0,1fr)); }
+.tt{ list-style:none; margin:0; padding:0; }
+.tt li{
+  display:grid; grid-template-columns:5.4em 1fr; gap:1.2em;
+  padding:.9em 0; border-bottom:1px solid rgba(198,162,92,.12);
+  align-items:baseline;
+}
+.tt li:last-child{ border-bottom:none; }
+.tt .t{ font-family:var(--f-lat); font-size:1.02rem; letter-spacing:.1em; color:var(--gold); font-variant-numeric:tabular-nums; }
+.tt .e{ font-family:var(--f-disp); font-size:1rem; color:var(--moon); letter-spacing:.06em; }
+.tt li.fire .e{ color:#e8a882; }
+
+/* ================= zones ================= */
+.zones{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1px; background:rgba(198,162,92,.16); border:1px solid rgba(198,162,92,.16); }
+.zone{ background:var(--ink); padding:clamp(16px,2.2vw,22px); }
+.zone .j{ font-family:var(--f-disp); font-size:1.05rem; color:var(--moon); letter-spacing:.08em; }
+.zone p{ color:var(--mist); font-size:.8rem; line-height:1.85; margin-top:.55em; }
+
+/* ================= shops ================= */
+.shops{ display:grid; gap:clamp(20px,3vw,34px); grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); }
+.shop-cat{ font-family:var(--f-lat); font-size:.66rem; letter-spacing:.26em; text-transform:uppercase; color:var(--gold); padding-bottom:.7em; border-bottom:1px solid var(--rule); }
+.shop-cat b{ font-family:var(--f-body); font-weight:400; letter-spacing:.14em; color:var(--mist); text-transform:none; font-size:.86em; margin-left:.9em; }
+.shop-list{ list-style:none; margin:1.1em 0 0; padding:0; display:flex; flex-direction:column; gap:.9em; }
+.shop-list li{ font-family:var(--f-disp); font-size:1rem; color:var(--moon); letter-spacing:.04em; line-height:1.6; }
+.shop-list li span{ display:block; font-family:var(--f-body); font-size:.76rem; color:var(--mist); letter-spacing:.08em; margin-top:.2em; }
+
+/* ================= access ================= */
+.access-grid{ display:grid; gap:clamp(24px,3.4vw,44px); grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); align-items:start; }
+.field{ border-top:1px solid var(--rule); padding-top:1.1em; }
+.field dt{ font-family:var(--f-lat); font-size:.64rem; letter-spacing:.26em; text-transform:uppercase; color:var(--gold); }
+.field dd{ margin:.8em 0 0; color:var(--paper); font-size:.95rem; }
+.field dd small{ display:block; color:var(--mist); font-size:.82rem; margin-top:.5em; line-height:1.9; }
+.warn{
+  border:1px solid rgba(168,65,43,.5); background:rgba(168,65,43,.09);
+  padding:clamp(16px,2.4vw,24px);
+}
+.warn h4{ color:#e8a882; font-size:1rem; letter-spacing:.08em; }
+.warn p{ color:var(--paper); font-size:.9rem; margin-top:.8em; line-height:2; }
+.map{
+  position:relative; border:1px solid var(--rule); background:var(--ink-2);
+  aspect-ratio:16/8;
+}
+.map iframe{ display:block; width:100%; height:100%; border:0; filter:saturate(.72) contrast(1.04) brightness(.94); }
+.map + .routemap{ margin-top:clamp(20px,3vw,32px); }
+
+/* route diagram — schematic, not geographic */
+.routemap{
+  display:grid; grid-template-columns:1fr auto 1.15fr auto 1fr; align-items:stretch;
+  border:1px solid rgba(198,162,92,.16); background:var(--ink-2);
+}
+.routemap .node{
+  display:flex; flex-direction:column; justify-content:center; gap:.5em;
+  padding:clamp(20px,3vw,30px) clamp(14px,2vw,22px); text-align:center;
+}
+.routemap .node .n{ font-size:.74rem; letter-spacing:.14em; color:var(--mist); }
+.routemap .node .j{ font-family:var(--f-disp); font-size:clamp(1rem,2.2vw,1.18rem); color:var(--moon); letter-spacing:.08em; }
+.routemap .hub{
+  background:linear-gradient(180deg, rgba(198,162,92,.13), rgba(198,162,92,.03));
+  border-inline:1px solid rgba(198,162,92,.2);
+}
+.routemap .hub .j{ color:#fff; font-weight:700; }
+.routemap .hub .n{ color:var(--gold); letter-spacing:.2em; }
+.routemap .moonmark svg{ width:26px; height:26px; margin:0 auto .2em; display:block; filter:drop-shadow(0 0 10px rgba(240,225,180,.4)); }
+.routemap .link{
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:.5em;
+  padding:clamp(16px,2.4vw,24px) clamp(10px,1.6vw,18px); min-width:clamp(96px,14vw,150px);
+}
+.routemap .link .l{ font-size:.76rem; letter-spacing:.14em; color:var(--gold); }
+.routemap .link .s{ font-size:.7rem; letter-spacing:.08em; color:var(--mist); text-align:center; line-height:1.7; }
+.routemap .link .bar{
+  display:block; width:100%; height:1px; background:repeating-linear-gradient(90deg, var(--gold-soft) 0 6px, transparent 6px 12px);
+}
+@media (max-width:720px){
+  .routemap{ grid-template-columns:1fr; }
+  .routemap .hub{ border-inline:none; border-block:1px solid rgba(198,162,92,.2); }
+  .routemap .link .bar{ width:1px; height:26px; background:repeating-linear-gradient(180deg, var(--gold-soft) 0 6px, transparent 6px 12px); }
+}
+.map-foot{
+  display:flex; flex-wrap:wrap; gap:.8em 1.6em; align-items:center;
+  margin-top:1em; font-size:.88rem; color:var(--mist);
+}
+.btn{
+  display:inline-block; font-family:var(--f-body); font-size:.85rem; letter-spacing:.14em;
+  color:var(--gold); text-decoration:none; border:1px solid var(--rule);
+  padding:.6em 1.4em; transition:background .25s, border-color .25s;
+}
+.btn:hover, .btn:focus-visible{ background:rgba(198,162,92,.12); border-color:var(--gold); color:var(--moon); }
+.routes{ display:grid; gap:1px; background:rgba(198,162,92,.16); border:1px solid rgba(198,162,92,.16); grid-template-columns:repeat(2,minmax(0,1fr)); }
+.route{ background:var(--ink); padding:clamp(16px,2.4vw,24px); }
+.route .h{ display:flex; align-items:baseline; gap:.8em; }
+.route .n{ font-family:var(--f-lat); font-size:.62rem; letter-spacing:.24em; text-transform:uppercase; color:var(--gold); }
+.route .j{ font-family:var(--f-disp); font-size:1.05rem; color:var(--moon); letter-spacing:.08em; }
+.route p{ color:var(--mist); font-size:.85rem; line-height:1.95; margin-top:.8em; }
+@media (max-width:720px){ .routes{ grid-template-columns:1fr; } .map{ aspect-ratio:4/3; } }
+.tag{
+  display:inline-block; font-family:var(--f-body); font-size:.7rem; letter-spacing:.14em;
+  color:var(--gold); border:1px solid var(--rule); padding:.25em .8em; margin-left:.7em;
+  vertical-align:middle;
+}
+
+/* ================= welcome / bring ================= */
+.two{ display:grid; gap:clamp(26px,4vw,52px); grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); align-items:start; }
+.bring{ list-style:none; margin:1.2em 0 0; padding:0; display:flex; flex-direction:column; gap:.75em; }
+.bring li{ position:relative; padding-left:1.6em; color:var(--paper); font-size:.94rem; }
+.bring li::before{ content:"◇"; position:absolute; left:0; top:0; color:var(--gold); font-size:.8em; }
+.bring li small{ color:var(--mist); }
+.asks{ display:flex; flex-direction:column; gap:1.4em; margin-top:1.2em; }
+.ask h4{ font-size:1rem; letter-spacing:.08em; }
+.ask p{ color:var(--mist); font-size:.88rem; margin-top:.5em; line-height:1.95; }
+
+/* ================= ticket ================= */
+.ticket{
+  display:grid; gap:clamp(24px,4vw,48px);
+  grid-template-columns:minmax(0,240px) minmax(0,1fr); align-items:center;
+}
+.chip{
+  border:1px solid var(--gold); background:linear-gradient(160deg, rgba(198,162,92,.14), rgba(198,162,92,.02));
+  padding:clamp(22px,3vw,30px); text-align:center;
+}
+.chip .n{ font-family:var(--f-lat); font-size:clamp(2.4rem,7vw,3.4rem); letter-spacing:.04em; color:var(--moon); line-height:1; font-variant-numeric:tabular-nums; }
+.chip .u{ font-family:var(--f-disp); color:var(--gold); letter-spacing:.2em; font-size:.9rem; margin-top:.7em; }
+.chip .lim{ display:block; font-family:var(--f-lat); font-size:.6rem; letter-spacing:.24em; text-transform:uppercase; color:var(--mist); margin-top:1.2em; }
+
+/* ================= closing ================= */
+.closing{ text-align:center; }
+.closing .big{
+  font-family:var(--f-disp); font-weight:700;
+  font-size:clamp(1.5rem,4.4vw,2.5rem); color:var(--moon);
+  letter-spacing:.13em; line-height:1.8;
+}
+.closing .sub{ color:var(--mist); margin-top:1.6em; font-size:clamp(.95rem,2vw,1.05rem); line-height:2.4; }
+.closing .hash{ margin-top:2.4em; font-family:var(--f-lat); font-size:.72rem; letter-spacing:.26em; color:var(--gold-soft); }
+
+/* ================= contact / footer ================= */
+.contact-grid{ display:grid; gap:clamp(20px,3vw,36px); grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); }
+.contact a{ color:var(--moon); text-decoration:none; border-bottom:1px solid var(--gold-soft); padding-bottom:.15em; word-break:break-all; }
+.contact a:hover, .contact a:focus-visible{ color:var(--gold); border-bottom-color:var(--gold); }
+
+footer{
+  border-top:1px solid rgba(198,162,92,.14);
+  padding-block:clamp(40px,6vw,64px);
+  text-align:center;
+}
+footer .mark{ font-family:var(--f-disp); font-weight:700; font-size:1.5rem; letter-spacing:.32em; text-indent:.32em; color:var(--gold); }
+footer .org{ margin-top:1.4em; color:var(--mist); font-size:.85rem; letter-spacing:.1em; line-height:2.2; }
+footer .fine{ margin-top:1.6em; color:var(--gold-soft); font-size:.72rem; letter-spacing:.08em; line-height:2; }
+
+a:focus-visible, [tabindex]:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
+
+/* ---------- sticky nav (appears once the hero has passed) ---------- */
+html{ scroll-behavior:smooth; }
+section[id]{ scroll-margin-top:64px; }
+.navbar{
+  position:fixed; inset:0 0 auto 0; z-index:50;
+  display:flex; align-items:center; gap:clamp(12px,3vw,32px);
+  padding:.75rem var(--gut);
+  background:rgba(5,9,26,.88);
+  border-bottom:1px solid rgba(198,162,92,.18);
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  transform:translateY(-102%); opacity:0;
+  transition:transform .45s cubic-bezier(.2,.7,.2,1), opacity .35s ease;
+}
+.navbar.on{ transform:none; opacity:1; }
+.navbar .mk{
+  font-family:var(--f-disp); font-weight:700; font-size:1.02rem;
+  letter-spacing:.24em; text-indent:.24em; color:var(--moon);
+  text-decoration:none; white-space:nowrap; flex:none;
+}
+.navbar nav{
+  display:flex; gap:clamp(10px,2.2vw,26px); align-items:center;
+  margin-left:auto; overflow-x:auto; scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+}
+.navbar nav::-webkit-scrollbar{ display:none; }
+.navbar nav a{
+  font-family:var(--f-body); font-size:.8rem; letter-spacing:.16em;
+  color:var(--mist); text-decoration:none; white-space:nowrap; padding:.3em 0;
+  border-bottom:1px solid transparent; transition:color .25s, border-color .25s;
+}
+.navbar nav a:hover, .navbar nav a:focus-visible{ color:var(--gold); border-bottom-color:var(--gold); }
+.navbar nav a.cta{ color:var(--gold); border:1px solid var(--rule); padding:.35em 1em; }
+.navbar nav a.cta:hover{ background:rgba(198,162,92,.12); border-color:var(--gold); }
+@media (max-width:560px){ .navbar .mk{ font-size:.9rem; letter-spacing:.16em; } }
+
+/* ================= responsive ================= */
+@media (max-width: 880px){
+  .phases{ grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .pillars{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .circle-wrap{ grid-template-columns:1fr; }
+  .zones{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .land-grid{ grid-template-columns:1fr; }
+  .day-cols{ grid-template-columns:1fr; }
+  .tt-grid{ grid-template-columns:1fr; }
+  .ticket{ grid-template-columns:1fr; }
+}
+@media (max-width: 560px){
+  .phases{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .pillars{ grid-template-columns:1fr; }
+  .moon{ width:190px; right:-60px; top:12px; opacity:.45; }
+  .zones{ grid-template-columns:1fr; }
+  .verbs{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .tt li{ grid-template-columns:4.4em 1fr; gap:.9em; }
+}
+@media (prefers-reduced-motion: reduce){
+  *{ animation:none !important; transition:none !important; }
+}
 </style>
 </head>
 <body>
 
-<header>
-  <span class="mark">月詠祭</span>
-  <nav>
-    <a href="#concept">祭について</a>
-    <a href="#outline">開催概要</a>
-    <a href="#artists">出演</a>
-    <a href="#market">出店</a>
-    <a href="#access">アクセス</a>
-    <a href="#notes">ご来場の方へ</a>
-  </nav>
-</header>
+<div class="veil" aria-hidden="true"></div>
 
-<div class="hero">
-  <div class="moon" aria-hidden="true"></div>
-  <svg class="torii" viewBox="0 0 1440 260" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0 260 L0 210 Q180 150 360 176 Q560 205 760 160 Q980 112 1180 168 Q1320 206 1440 186 L1440 260 Z" fill="#070b18"/>
-    <path d="M0 260 L0 236 Q220 200 430 222 Q660 246 900 210 Q1140 174 1440 220 L1440 260 Z" fill="#04060f"/>
-  </svg>
-  <div class="hero-inner">
-    <p class="vol">TSUKUYOMI MATSURI  VOL.3</p>
-    <h1>月詠祭</h1>
-    <p class="tagline">作る側も、来る側も、全てアーティスト。</p>
-    <div class="hero-meta">
-      <p class="dates">2026.9.26 SAT — 9.27 SUN</p>
-      <p class="place">千葉県成田市・木の根遺跡／木の根ペンション</p>
-      <span class="badge">入 場 無 料</span>
-    </div>
-  </div>
-  <div class="scroll">SCROLL</div>
+<div class="navbar" id="navbar">
+  <a class="mk" href="#top">月詠祭</a>
+  <nav aria-label="サイト内リンク">
+    <a href="#about">月詠とは</a>
+    <a href="#lineup">出演</a>
+    <a href="#timetable">タイムテーブル</a>
+    <a href="#grounds">会場</a>
+    <a href="#shops">出店</a>
+    <a href="#access">アクセス</a>
+    <a class="cta" href="#contact">お問い合わせ</a>
+  </nav>
 </div>
 
-<section id="concept">
-  <div class="wrap">
-    <p class="sec-title">CONCEPT</p>
-    <h2 class="sec-head">祭について</h2>
+<!-- ============================== HERO ============================== -->
+<header class="hero" id="top">
+  <div class="moon" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <p class="lat" style="font-size:.7rem;margin-bottom:1.8em;">Chiba 900th Anniversary Year</p>
+    <h1 class="kanji">月詠祭</h1>
+    <p class="lat romaji">Tsukuyomi Matsuri</p>
+    <p class="anniv">千葉開府 <b>900</b> 年 ─ つなぐ祈り、未来へ続く和。</p>
 
-    <p class="lead rv">人生は、一筆書き。<br>神話は、書き足すことができる。</p>
+    <p class="dates">
+      <span>09.26</span><span class="dow">Sat</span>
+      <span class="dash">—</span>
+      <span>09.27</span><span class="dow">Sun</span>
+      <span class="dow" style="letter-spacing:.24em;">2026</span>
+    </p>
 
-    <div class="body-text rv">
-      <p>月詠祭は、誰かが用意した舞台を観にいく祭りではありません。火を焚き、竹に灯りをともし、音を鳴らし、その場に立つ。そのすべてが、この二日間をつくる一筆になります。作る側も、来る側もない。ここに集まる人みなが、この祭りのアーティストです。</p>
-      <p>掲げているのは、彌榮（いやさか）、今ここ、そして八百万の神々への感謝。Vol.1から変わらない祈りと共創の核を、三度目のこの秋も、そのまま持っていきます。</p>
+    <p class="hero-meta">
+      <span>木の根ペンション</span>
+      <span class="sep">/</span>
+      <span>千葉県成田市木の根 296-1</span>
+      <span class="sep">/</span>
+      <span>雨天決行</span>
+    </p>
+
+    <p class="free">入場無料<small>Open to all · Entrance free</small></p>
+  </div>
+</header>
+
+<main>
+
+<!-- ============================== 序 ============================== -->
+<section class="jo">
+  <div class="wrap narrow stack">
+    <p class="kicker">月を詠み、心を結ぶ、<br>祈りの二日間。</p>
+    <div class="rule" aria-hidden="true"></div>
+
+    <p class="verse">
+      九月の終わり、夜の風に秋の気配が混じる頃。<br>
+      知らない誰かの音に足を止め、火を囲んで言葉を交わし、<br>
+      風に揺れる木々の向こうで誰かの笑い声が聞こえる。<br>
+      そんな、<em>名前のつかない時間</em>を。
+    </p>
+
+    <p class="verse">
+      夜が深くなるほど、<br>
+      音楽と人と自然の境目はほどけていく。
+    </p>
+
+    <p class="verse">
+      祭とはきっと、予定された出来事ではなく、<br>
+      同じ時、同じ場所に集まった人たちが<br>
+      <em>二度と同じ形では訪れない瞬間</em>を、一緒に生きること。
+    </p>
+
+    <p class="verse">
+      千葉が 900 年という時を刻む 2026 年。<br>
+      世界へ空がひらく成田の地で、<br>
+      またひとつ、新しい物語がはじまります。
+    </p>
+  </div>
+</section>
+
+<!-- ============================== WHY TSUKUYOMI ============================== -->
+<section id="about">
+  <div class="wrap stack">
+    <div>
+      <p class="eyebrow">Why Tsukuyomi<span class="jp">なぜ、月詠なのか。</span></p>
+      <h2 class="sec-title">月は、夜を照らすだけの存在ではない。</h2>
+      <p class="sec-lede">
+        満ち欠けを繰り返し、すべての生命にリズムを与え、古来より祈りや暦、物語の中心にあった。
+        月を詠み、月に祈り、月とともに生きる。それが、日本人の美しい感性であり、智慧。
+      </p>
     </div>
 
-    <div class="words rv">
-      <span>彌 榮</span><span>今 こ こ</span><span>八百万の神々への感謝</span>
+    <div class="phases">
+      <div class="phase">
+        <svg viewBox="0 0 40 40" role="img" aria-label="新月"><circle cx="20" cy="20" r="16" fill="none" stroke="#8d7440" stroke-width="1.4"/></svg>
+        <span class="n">新月</span><span class="m">始まり</span><span class="e">New Moon</span>
+      </div>
+      <div class="phase">
+        <svg viewBox="0 0 40 40" role="img" aria-label="上弦の月"><circle cx="20" cy="20" r="16" fill="none" stroke="#8d7440" stroke-width="1.4"/><path d="M20 4 A16 16 0 0 1 20 36 Z" fill="#c6a25c"/></svg>
+        <span class="n">上弦</span><span class="m">挑戦</span><span class="e">First Quarter</span>
+      </div>
+      <div class="phase">
+        <svg viewBox="0 0 40 40" role="img" aria-label="満月"><circle cx="20" cy="20" r="16" fill="#f2e7c6"/></svg>
+        <span class="n">満月</span><span class="m">調和・感謝</span><span class="e">Full Moon</span>
+      </div>
+      <div class="phase">
+        <svg viewBox="0 0 40 40" role="img" aria-label="下弦の月"><circle cx="20" cy="20" r="16" fill="none" stroke="#8d7440" stroke-width="1.4"/><path d="M20 4 A16 16 0 0 0 20 36 Z" fill="#c6a25c"/></svg>
+        <span class="n">下弦</span><span class="m">手放し</span><span class="e">Last Quarter</span>
+      </div>
+      <div class="phase">
+        <svg viewBox="0 0 40 40" role="img" aria-label="新月・再生"><circle cx="20" cy="20" r="16" fill="none" stroke="#c6a25c" stroke-width="1.4"/><circle cx="20" cy="20" r="6" fill="none" stroke="#8d7440" stroke-width="1"/></svg>
+        <span class="n">新月</span><span class="m">再生</span><span class="e">Rebirth</span>
+      </div>
+    </div>
+
+    <p class="narrow" style="text-align:center;font-family:var(--f-disp);color:var(--moon);font-size:clamp(1rem,2.2vw,1.15rem);letter-spacing:.08em;line-height:2.2;">
+      満ちては欠け、欠けては満ちる。終わりは、次の始まり。<br>
+      この循環こそが、私たちに「再生」の希望を教えてくれる。
+    </p>
+
+    <div class="pillars">
+      <div class="pillar">
+        <h4><span class="e">Harmony</span>自然との調和</h4>
+        <p>月は、海の満ち引きや植物の営み、人の心や体のリズムにも影響を与えている。</p>
+      </div>
+      <div class="pillar">
+        <h4><span class="e">Prayer</span>祈りの対象</h4>
+        <p>月は古来より神聖な存在として信仰され、多くの神社や祭祀が月とともにある。</p>
+      </div>
+      <div class="pillar">
+        <h4><span class="e">Aesthetics</span>日本の美意識</h4>
+        <p>和歌や俳句、能や舞、名月を愛でる文化。月は日本の美意識の中心にある。</p>
+      </div>
+      <div class="pillar">
+        <h4><span class="e">Rebirth</span>再生と未来</h4>
+        <p>月のように、何度でも巡り、何度でもやり直すことができる。それが私たちの未来。</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="alt" id="place">
-  <div class="wrap">
-    <p class="sec-title">THE LAND</p>
-    <h2 class="sec-head">木の根遺跡という土地</h2>
-    <div class="body-text rv">
-      <p>会場となる木の根は、縄文の昔から人々が穏やかに暮らしてきた土地です。のちに空港建設をめぐる三里塚闘争の只中に置かれ、それでも今日まで生き残ってきました。</p>
-      <p>私たちはその歴史を、論争としてではなく、鎮魂と感謝の対象として受けとめています。この土地が愛と平和のうちにある「今」に、祭り人たちが感謝を捧げつづける。その感謝を、来場されるあなたにも体で感じてもらう。それが月詠祭のかたちです。</p>
-      <p>空プール、焚火ノ庭、拝殿、奥宮、BAR月詠、ヒーリング、展望デッキ、そして黒塗りの三角鳥居。四神相応にならって配された場を、二日間かけてめぐってください。Vol.1で埋めたタイムカプセルは、2126年に開きます。</p>
+<!-- ============================== ONE CIRCLE ============================== -->
+<section>
+  <div class="wrap stack">
+    <div>
+      <p class="eyebrow">First Quarter · 上弦<span class="jp">挑戦</span></p>
+      <h2 class="sec-title">祭は、観るものから、つくるものへ。</h2>
+      <p class="sec-lede">
+        月詠祭には、「観客」という名前の席はありません。音を鳴らす人。舞う人。語らう人。静かに祈る人。
+        そして、ただそこにいて、同じ月を見上げる人。そのすべてが、この祭の一部です。
+      </p>
+    </div>
+
+    <div class="circle-wrap">
+      <div class="verbs">
+        <div class="verb"><span class="j">聴く</span><span class="e">Listen</span></div>
+        <div class="verb"><span class="j">舞う</span><span class="e">Dance</span></div>
+        <div class="verb"><span class="j">奏でる</span><span class="e">Play</span></div>
+        <div class="verb"><span class="j">語らう</span><span class="e">Talk</span></div>
+        <div class="verb"><span class="j">祈る</span><span class="e">Pray</span></div>
+        <div class="verb"><span class="j">つくる</span><span class="e">Create</span></div>
+        <div class="verb"><span class="j">囲む</span><span class="e">Gather</span></div>
+        <div class="verb"><span class="j">見上げる</span><span class="e">Look Up</span></div>
+      </div>
+      <div class="enso">
+        <div>
+          <div class="wa">和</div>
+          <div class="cap">One Circle</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="narrow" style="text-align:center;font-family:var(--f-disp);color:var(--moon);font-size:clamp(1rem,2.2vw,1.15rem);letter-spacing:.08em;line-height:2.3;">
+      立場も、国も、年齢も越えて。それぞれの「個」が、ひとつの「円」へ。<br>
+      完成された祭に集まるのではなく、集まった人たちによって、祭が完成していく。
+    </p>
+  </div>
+</section>
+
+<!-- ============================== THE LAND ============================== -->
+<section>
+  <div class="wrap stack">
+    <div>
+      <p class="eyebrow">Full Moon · 満月<span class="jp">調和・感謝</span></p>
+      <h2 class="sec-title">木の根という土地で。</h2>
+    </div>
+
+    <div class="land-grid">
+      <div>
+        <p style="color:var(--paper);">
+          会場となる木の根の地は、<strong style="color:var(--moon);font-weight:400;">木の根遺跡</strong>と呼ばれています。
+          縄文の時代から、人々がこの土地で平和に暮らしてきた歴史がある場所。
+          そして、三里塚闘争 ── 空港建設をめぐる土地の争い ── のなかを生き延びてきた土地でもあります。
+        </p>
+        <p style="color:var(--paper);margin-top:1.6em;">
+          月詠祭は、この土地が積み重ねてきた時間に頭を垂れ、
+          いまここで愛と平和に生きられることへの感謝を捧げ続ける祭です。
+          その感謝を、来場するみなさんにも身体で感じてもらえたら。
+        </p>
+        <p style="color:var(--paper);margin-top:1.6em;">
+          世界と日本を結ぶ玄関口、成田から。
+          日本が大切にしてきた精神や文化を、懐かしいものとして残すだけではなく、
+          <strong style="color:var(--moon);font-weight:400;">今を生きる文化</strong>として、世界へ。
+        </p>
+      </div>
+
+      <div class="land-note">
+        <h4>この土地の歴史について</h4>
+        <p>
+          三里塚をめぐる歴史は、月詠祭にとって主張や論争の題材ではありません。
+          この土地に関わってきたすべての人と時間に対する
+          <strong style="color:#e8a882;font-weight:400;">鎮魂</strong>と、
+          いま在る平和への<strong style="color:#e8a882;font-weight:400;">感謝</strong>。
+          その文脈でのみ、私たちはこの歴史に向き合います。
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="outline">
-  <div class="wrap">
-    <p class="sec-title">OUTLINE</p>
-    <h2 class="sec-head">開催概要</h2>
-    <div class="info rv">
-      <div><span class="k">名称</span><span class="v">月詠祭 Vol.3</span></div>
-      <div><span class="k">日程</span><span class="v">2026年9月26日（土）〜 9月27日（日）<small>両日とも一般公開／夜通しの開催となります</small></span></div>
-      <div><span class="k">会場</span><span class="v">木の根ペンション<small>千葉県成田市木の根296-1</small></span></div>
-      <div><span class="k">入場</span><span class="v">無料<small>会場内の飲食・物販は各店舗にて有料。現金・キャッシュレス（PayPay等）に対応します</small></span></div>
-      <div><span class="k">内容</span><span class="v">ライブ／DJ／和太鼓／書道LIVEアート／VJ・レーザー／竹あかりワークショップ／焚き火／飲食・物販の出店／キッズエリア／BAR月詠</span></div>
-      <div><span class="k">開催可否</span><span class="v">雨天決行<small>気象警報が発表された場合のみ中止とし、公式SNSにてお知らせします</small></span></div>
-      <div><span class="k">主催</span><span class="v">月詠祭実行委員会</span></div>
+<!-- ============================== LINEUP ============================== -->
+<section id="lineup">
+  <div class="wrap stack">
+    <div>
+      <p class="eyebrow">Lineup<span class="jp">出演</span></p>
+      <h2 class="sec-title">音・舞・祈りの担い手たち</h2>
+      <p class="sec-lede">出演時間は調整中です。決定次第、公式 Instagram にて発表します。</p>
+    </div>
+
+    <div class="day-cols">
+      <div>
+        <div class="day-head"><span class="d">09.26</span><span class="w">Sat</span></div>
+        <ul class="acts">
+          <li>JOMON MIND</li>
+          <li>TONBO <span>DJ 蜻蛉</span></li>
+          <li>コマリエ <span>書道 LIVE アート</span></li>
+          <li>VJ Laser Boy <span>26日午後より</span></li>
+        </ul>
+      </div>
+      <div>
+        <div class="day-head"><span class="d">09.27</span><span class="w">Sun</span></div>
+        <ul class="acts">
+          <li>akira∞ikeda</li>
+          <li>KENTA HAYASHI</li>
+          <li>KaguyaMika</li>
+          <li>三影 <span>四股舞</span></li>
+        </ul>
+      </div>
+      <div>
+        <div class="day-head"><span class="d">両日</span><span class="w">Both Days</span></div>
+        <ul class="acts">
+          <li>Katakamuii</li>
+          <li>TAIKODELICS</li>
+          <li>Sho Ishii</li>
+          <li>TSUBASA NAKAI</li>
+          <li>彌榮姉妹</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="host-note">
+      <span class="k">Host</span>
+      <span class="v">DJ TSUKUYOMI</span>
+      <span style="color:var(--mist);font-size:.84rem;">主催者枠として両日出演</span>
     </div>
   </div>
 </section>
 
-<section class="alt" id="artists">
-  <div class="wrap">
-    <p class="sec-title">ARTISTS</p>
-    <h2 class="sec-head">出演</h2>
-    <ul class="artists rv">
-      <li><span class="name">akira∞ikeda</span></li>
-      <li><span class="name">Katakamuii</span></li>
-      <li><span class="name">JOMON MIND</span></li>
-      <li><span class="name">TONBO</span><span class="role">DJ 蜻蛉</span></li>
-      <li><span class="name">TAIKODELICS</span></li>
-      <li><span class="name">KaguyaMika</span></li>
-      <li><span class="name">Sho Ishii</span></li>
-      <li><span class="name">KENTA HAYASHI</span></li>
-      <li><span class="name">TSUBASA NAKAI</span></li>
-      <li><span class="name">彌榮姉妹</span></li>
-      <li><span class="name">三影</span><span class="role">四股舞</span></li>
-      <li><span class="name">コマリエ</span><span class="role">書道LIVEアート</span></li>
-      <li><span class="name">VJ Laser Boy</span><span class="role">VJ / LASER</span></li>
-      <li><span class="name">DJ TSUKUYOMI</span><span class="role">主催</span></li>
-    </ul>
-    <p class="note">タイムテーブルは決定次第、本サイトおよび公式SNSにて公開します。</p>
-  </div>
-</section>
-
-<section id="market">
-  <div class="wrap">
-    <p class="sec-title">MARKET</p>
-    <h2 class="sec-head">出店</h2>
-
-    <div class="cat rv">
-      <h3>飲食</h3>
-      <ul>
-        <li>彌榮天麩羅 <em>千葉県産・無農薬野菜</em></li>
-        <li>月詠の食卓 <em>彌榮むすび／蕎麦粉ガレット／豚汁</em></li>
-        <li>魔法食堂</li>
-        <li>NOMADS BURGER <em>千葉県産豚肉</em></li>
-        <li>神ちゃんのオーガニックピザ</li>
-        <li>DA'KINE COFFEE BEAN <em>コナコーヒー／マラサダ</em></li>
-      </ul>
+<!-- ============================== TIMETABLE ============================== -->
+<section id="timetable">
+  <div class="wrap stack">
+    <div>
+      <p class="eyebrow">Timetable<span class="jp">タイムスケジュール（予定）</span></p>
+      <h2 class="sec-title">二日間の流れ</h2>
+      <p class="sec-lede">スケジュールは変更になる場合があります。</p>
     </div>
 
-    <div class="cat rv">
-      <h3>物販・クラフト</h3>
-      <ul>
-        <li>VAGUE VAN VREEZE</li>
-        <li>シルクスクリーン</li>
-        <li>これもんのこれ市</li>
-      </ul>
-    </div>
-
-    <div class="cat rv">
-      <h3>美容・ヒーリング</h3>
-      <ul>
-        <li>ヘナタトゥー</li>
-        <li>ヘアメイク</li>
-        <li>回復の泉</li>
-      </ul>
-    </div>
-
-    <div class="cat rv">
-      <h3>BAR</h3>
-      <ul>
-        <li>BAR月詠 <em>会場内常設</em></li>
-      </ul>
-    </div>
-
-    <p class="note">出店内容は変更となる場合があります。</p>
-  </div>
-</section>
-
-<section class="alt" id="access">
-  <div class="wrap">
-    <p class="sec-title">ACCESS</p>
-    <h2 class="sec-head">アクセス</h2>
-
-    <div class="info rv" style="margin-bottom:34px">
-      <div><span class="k">会場</span><span class="v">木の根ペンション<small>千葉県成田市木の根296-1</small></span></div>
-    </div>
-
-    <div class="warn rv">
-      <strong>会場に駐車場はございません</strong>
-      <p>お車でお越しの方は、必ず近隣の一般有料駐車場をご利用ください。会場周辺の路上駐車、および私有地・近隣店舗への駐車は固くお断りします。</p>
-      <ul>
-        <li>芝山千代田駅前駐車場／約600円・24時間／116台／24時間入出庫可／会場まで徒歩約15〜20分</li>
-        <li>上記は祭り専用・提携の駐車場ではありません。満車の場合があります</li>
-        <li>料金・利用条件は現地の掲示を優先してください</li>
-      </ul>
-      <p style="margin-top:14px">できるかぎり公共交通機関のご利用、または乗り合わせでのご来場にご協力ください。</p>
-    </div>
-
-    <div class="warn rv">
-      <strong>シャトルバスを運行予定です</strong>
-      <p>成田駅・芝山千代田駅と会場を結ぶシャトルバスの運行を予定しています（30分間隔）。運行時間などの詳細が決まり次第、本サイトおよび公式SNSにてお知らせします。</p>
+    <div class="tt-grid">
+      <div>
+        <div class="day-head"><span class="d">09.26</span><span class="w">Sat</span></div>
+        <ul class="tt">
+          <li><span class="t">13:00</span><span class="e">開場・受付開始</span></li>
+          <li><span class="t">15:00</span><span class="e">オープニングセレモニー</span></li>
+          <li><span class="t">17:00</span><span class="e">LIVE / 舞 / 御神事</span></li>
+          <li class="fire"><span class="t">20:00</span><span class="e">火の儀・音の宴</span></li>
+          <li><span class="t">22:00</span><span class="e">静寂の時間</span></li>
+        </ul>
+      </div>
+      <div>
+        <div class="day-head"><span class="d">09.27</span><span class="w">Sun</span></div>
+        <ul class="tt">
+          <li><span class="t">6:00</span><span class="e">朝の祈り・禊</span></li>
+          <li><span class="t">9:00</span><span class="e">音・舞・語り</span></li>
+          <li><span class="t">12:00</span><span class="e">奉納・体験セッション</span></li>
+          <li><span class="t">15:00</span><span class="e">祈りの輪</span></li>
+          <li><span class="t">18:00</span><span class="e">クロージングセレモニー</span></li>
+          <li><span class="t">20:00</span><span class="e">終了</span></li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="notes">
-  <div class="wrap">
-    <p class="sec-title">INFORMATION</p>
-    <h2 class="sec-head">ご来場の方へ</h2>
-    <ul class="notes rv">
-      <li>夜通しの開催です。<small>秋の夜は冷え込みます。防寒着をお持ちください。足元の暗い場所がありますので、ライト（懐中電灯・ヘッドライト）と歩きやすい靴をおすすめします。</small></li>
-      <li>会場では火を扱います。<small>焚き火・竹あかり・松明などがあります。係の案内に従い、お子さま連れの方は特にお気をつけください。</small></li>
-      <li>キッズエリアがあります。<small>お子さまも一緒に過ごせるエリアと、見守りのスタッフがいます。ワークショップも予定しています。</small></li>
-      <li>竹あかりワークショップ。<small>会場の灯りを、来場された方と一緒につくります。どなたでもご参加いただけます。</small></li>
-      <li>ごみは分別にご協力ください。<small>会場の自然と土地に敬意をもってお過ごしいただけますようお願いします。</small></li>
-      <li>お酒の提供について。<small>BAR月詠ではその場でお飲みいただく形での提供となります。お車でお越しの方への酒類の提供はいたしません。</small></li>
-    </ul>
+<!-- ============================== ZONES ============================== -->
+<section id="grounds">
+  <div class="wrap stack">
+    <div>
+      <p class="eyebrow">Grounds<span class="jp">会場のゾーン</span></p>
+      <h2 class="sec-title">四神相応のまなびで配された、九つの場</h2>
+      <p class="sec-lede">それぞれの過ごし方で、それぞれの “月詠祭” を見つけてください。</p>
+    </div>
+
+    <div class="zones">
+      <div class="zone"><span class="j">黒塗り三角鳥居</span><p>高さ 3m の三本柱鳥居。メインステージ正面の中央に立つ、この祭の入口。</p></div>
+      <div class="zone"><span class="j">空プール</span><p>白幕に VJ を当てるステージ。音と光が水のない底に落ちる。</p></div>
+      <div class="zone"><span class="j">焚火ノ庭</span><p>火を囲み、語らう場所。夜が深まるほど人が集まる。</p></div>
+      <div class="zone"><span class="j">拝殿</span><p>御神事と奉納舞のための場。岩戸開き／戸締り。</p></div>
+      <div class="zone"><span class="j">奥宮</span><p>ひとりで静かに祈るための、いちばん奥の場所。</p></div>
+      <div class="zone"><span class="j">BAR 月詠</span><p>会場内の既存施設。キャッシュレス（PayPay）対応。</p></div>
+      <div class="zone"><span class="j">ヒーリング</span><p>身体をゆるめ、整えるためのエリア。</p></div>
+      <div class="zone"><span class="j">キッズエリア</span><p>見守りチームが常駐。この祭に「迷子」という概念はありません。</p></div>
+      <div class="zone"><span class="j">展望デッキ／宿泊テント</span><p>月を見上げるための高み、そして夜を明かすための場所。</p></div>
+    </div>
+
+    <p style="color:var(--mist);font-size:.88rem;">
+      会場には、竹あかり・竹ティピ・松明・茅の輪・簡易鳥居が並びます。竹と薪は木の根の山と仲間の庭から。
+      装飾のほとんどは、手づくりと持ち寄りで組み上げられます。竹あかりは、来場者と一緒につくるワークショップも予定。
+    </p>
   </div>
 </section>
+
+<!-- ============================== SHOPS ============================== -->
+<section id="shops">
+  <div class="wrap stack">
+    <div>
+      <p class="eyebrow">Shops<span class="jp">出店</span></p>
+      <h2 class="sec-title">テント 9 張とキッチンカー 1 台</h2>
+      <p class="sec-lede">飲食 6・物販 3・美容 2・ヒーリング 1・BAR 1。千葉の畑と、つくり手の手から。</p>
+    </div>
+
+    <div class="shops">
+      <div>
+        <p class="shop-cat">Food<b>飲食</b></p>
+        <ul class="shop-list">
+          <li>彌榮天麩羅<span>千葉県産・無農薬野菜</span></li>
+          <li>月詠の食卓<span>彌榮むすび／蕎麦粉ガレット／豚汁</span></li>
+          <li>魔法食堂</li>
+          <li>NOMADS BURGER<span>千葉県産豚肉</span></li>
+          <li>オーガニックピザ</li>
+          <li>DA'KINE COFFEE BEAN<span>キッチンカー／コナコーヒー・マラサダ</span></li>
+        </ul>
+      </div>
+      <div>
+        <p class="shop-cat">Goods<b>物販</b></p>
+        <ul class="shop-list">
+          <li>VAGUE VAN VREEZE</li>
+          <li>シルクスクリーン</li>
+          <li>これもんのこれ市</li>
+        </ul>
+      </div>
+      <div>
+        <p class="shop-cat">Beauty &amp; Healing<b>美容・ヒーリング</b></p>
+        <ul class="shop-list">
+          <li>ヘナタトゥー</li>
+          <li>ヘアメイク</li>
+          <li>回復の泉<span>ヒーリング</span></li>
+        </ul>
+      </div>
+      <div>
+        <p class="shop-cat">Bar<b>BAR</b></p>
+        <ul class="shop-list">
+          <li>BAR 月詠<span>会場内既存施設／その場でお召し上がりください</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TICKET ============================== -->
+<section>
+  <div class="wrap stack">
+    <div>
+      <p class="eyebrow">Tsukuyomi Ticket<span class="jp">月詠チケット</span></p>
+      <h2 class="sec-title">売上のすべてが、出演者へ。</h2>
+    </div>
+
+    <div class="ticket">
+      <div class="chip">
+        <div class="n">222</div>
+        <div class="u">枚 限定</div>
+        <span class="lim">Valid forever, at Tsukuyomi</span>
+      </div>
+      <div>
+        <p style="color:var(--paper);">
+          1 枚 1,000 円分。会場内の対象店舗でお使いいただけます。
+          そしてこのチケットの売上は、<strong style="color:var(--moon);font-weight:400;">全額が出演アーティストへの寄付</strong>になります。
+        </p>
+        <p style="color:var(--mist);margin-top:1.4em;font-size:.9rem;">
+          有効期限は「月詠祭にて永遠に使用可能」。今年使い切らなくても、次の月詠祭でまた使えます。
+          額面はオリジナルデザインのイラストで表現されます。
+        </p>
+        <p style="color:var(--mist);margin-top:1.2em;font-size:.88rem;">
+          ※ 1,000 円未満のお釣りは出ません。超過分は現金等との併用が可能です。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== ACCESS ============================== -->
+<section id="access">
+  <div class="wrap stack">
+    <div>
+      <p class="eyebrow">Access<span class="jp">アクセス</span></p>
+      <h2 class="sec-title">木の根ペンション</h2>
+      <p class="sec-lede">千葉県成田市木の根 296-1</p>
+    </div>
+
+    <div class="warn">
+      <h4>会場に一般来場者用の駐車場はありません</h4>
+      <p>
+        できるだけ乗り合わせ、または公共交通機関でのご来場にご協力ください。
+        路上駐車・私有地への駐車は固くお断りします。
+      </p>
+    </div>
+
+    <div>
+      <div class="map">
+        <iframe
+          title="月詠祭 会場（木の根ペンション）地図"
+          src="https://www.google.com/maps?q=%E5%8D%83%E8%91%89%E7%9C%8C%E6%88%90%E7%94%B0%E5%B8%82%E6%9C%A8%E3%81%AE%E6%A0%B9296-1&hl=ja&z=15&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen></iframe>
+      </div>
+
+      <div class="routemap" role="group" aria-label="会場までのルート概略図">
+        <div class="node">
+          <span class="n">JR・京成本線</span>
+          <span class="j">成田駅</span>
+        </div>
+
+        <div class="link">
+          <span class="l">シャトルバス</span>
+          <span class="bar" aria-hidden="true"></span>
+          <span class="s">30 分間隔・運行予定</span>
+        </div>
+
+        <div class="node hub">
+          <span class="moonmark" aria-hidden="true">
+            <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="15" fill="#f2e7c6"/></svg>
+          </span>
+          <span class="j">木の根ペンション</span>
+          <span class="n">月詠祭 会場</span>
+        </div>
+
+        <div class="link">
+          <span class="l">シャトルバス</span>
+          <span class="bar" aria-hidden="true"></span>
+          <span class="s">または徒歩 約 15〜20 分</span>
+        </div>
+
+        <div class="node">
+          <span class="n">芝山鉄道</span>
+          <span class="j">芝山千代田駅</span>
+        </div>
+      </div>
+
+      <p class="map-foot">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%8D%83%E8%91%89%E7%9C%8C%E6%88%90%E7%94%B0%E5%B8%82%E6%9C%A8%E3%81%AE%E6%A0%B9296-1" target="_blank" rel="noopener">Google マップで開く</a>
+        <span>千葉県成田市木の根 296-1</span>
+        <span style="font-size:.8rem;">※ 上図は位置関係の概略です。距離・方角は実際とは異なります。</span>
+      </p>
+    </div>
+
+    <div class="routes">
+      <div class="route">
+        <div class="h"><span class="n">By Train</span><span class="j">電車でお越しの方</span></div>
+        <p>
+          京成本線・JR 成田駅、または芝山鉄道 芝山千代田駅が最寄りです。
+          両駅と会場を結ぶシャトルバス（30 分間隔）を運行予定です。乗り場と時刻は決定次第お知らせします。
+        </p>
+      </div>
+      <div class="route">
+        <div class="h"><span class="n">By Car</span><span class="j">お車でお越しの方</span></div>
+        <p>
+          会場に一般来場者用の駐車場はありません。芝山千代田駅前駐車場（会場まで徒歩約 15〜20 分）などの
+          近隣一般有料駐車場をご利用いただくか、乗り合わせでのご来場にご協力ください。
+        </p>
+      </div>
+    </div>
+
+    <div class="access-grid">
+      <dl class="field" style="margin:0;">
+        <dt>Shuttle Bus<span class="tag">運行予定</span></dt>
+        <dd>
+          成田駅・芝山千代田駅 ⇄ 木の根ペンション
+          <small>30 分間隔（1 時間に 2 本）で運行する予定です。運行時間・乗り場は決定次第お知らせします。</small>
+        </dd>
+      </dl>
+      <dl class="field" style="margin:0;">
+        <dt>Nearby Parking</dt>
+        <dd>
+          芝山千代田駅前駐車場
+          <small>
+            ¥600 / 24 時間・116 台・24 時間入出庫可・会場まで徒歩約 15〜20 分。<br>
+            ※ 月詠祭専用・提携の駐車場ではありません。満車の場合があります。現地の掲示料金が優先されます。
+          </small>
+        </dd>
+      </dl>
+      <dl class="field" style="margin:0;">
+        <dt>Weather</dt>
+        <dd>
+          雨天決行
+          <small>警報が発表された場合のみ中止とします。夜は冷える可能性があります。</small>
+        </dd>
+      </dl>
+      <dl class="field" style="margin:0;">
+        <dt>Entrance</dt>
+        <dd>
+          入場無料・どなたでも
+          <small>年齢も、肩書きも、立場も越えて、どなたでも自由にご参加いただけます。</small>
+        </dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOR VISITORS ============================== -->
+<section>
+  <div class="wrap stack">
+    <div>
+      <p class="eyebrow">Before You Come<span class="jp">ご来場のみなさまへ</span></p>
+      <h2 class="sec-title">当日を心地よく過ごしていただくために</h2>
+    </div>
+
+    <div class="two">
+      <div>
+        <h3 style="font-size:1.1rem;letter-spacing:.1em;">持ち物のおすすめ</h3>
+        <ul class="bring">
+          <li>動きやすい服装・履き慣れた靴</li>
+          <li>羽織やタオル <small>（夜は冷えることがあります）</small></li>
+          <li>マイボトル・マイカップ <small>（環境に配慮して）</small></li>
+          <li>レジャーシートや敷物 <small>（自由にお使いください）</small></li>
+          <li>虫よけ・日除け対策</li>
+          <li>あなたの祈りや想い</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 style="font-size:1.1rem;letter-spacing:.1em;">お願い</h3>
+        <div class="asks">
+          <div class="ask">
+            <h4>ゴミは各自でお持ち帰りください</h4>
+            <p>自然豊かな会場を未来へつなぐため、ゴミはすべてお持ち帰りをお願いいたします。</p>
+          </div>
+          <div class="ask">
+            <h4>静かに過ごす時間も大切に</h4>
+            <p>音楽や演出を楽しむ時間もあれば、祈りや静寂を感じる時間もあります。場の空気を尊重し、思いやりのある行動をお願いいたします。</p>
+          </div>
+          <div class="ask">
+            <h4>火のそばでは、ゆっくりと</h4>
+            <p>会場には焚き火や松明があります。お子さま連れの方は特に、火のまわりでの行動にご注意ください。</p>
+          </div>
+          <div class="ask">
+            <h4>みんなでつくる、やさしい祭り</h4>
+            <p>初めての方も、おひとりの方も、どなたでも安心して楽しめる場にしたいと思っています。困ったことがあれば、スタッフまでお気軽にお声がけください。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CLOSING ============================== -->
+<section class="closing">
+  <div class="wrap narrow stack">
+    <p class="eyebrow" style="justify-content:center;">
+      <span style="flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--rule));"></span>
+      New Moon · 新月<span class="jp">再生</span>
+      <span style="flex:1;height:1px;background:linear-gradient(90deg,var(--rule),transparent);"></span>
+    </p>
+
+    <p class="big">千葉開府 900 年を祝い、<br>そして 1000 年、その先の未来へ。</p>
+
+    <p class="sub">
+      今この瞬間を祝い、今ここにいる人たちと心を結び、未来へ残る波を。<br>
+      月を見上げれば、遠く離れた場所から来た僕らも同じ光の中にいる。
+    </p>
+
+    <p class="big" style="font-size:clamp(1.2rem,3.2vw,1.8rem);">
+      この夜がいつか、あなたの記憶の中の美しい月になりますように。<br>
+      九月の終わり、月の下で逢いましょう。
+    </p>
+
+    <p class="hash">#月詠祭 #TSUKUYOMIMATSURI #CHIBA900 #OPENTOALL</p>
+  </div>
+</section>
+
+<!-- ============================== CONTACT ============================== -->
+<section class="contact" id="contact">
+  <div class="wrap stack">
+    <div>
+      <p class="eyebrow">Contact<span class="jp">お問い合わせ</span></p>
+      <h2 class="sec-title">この祭を、一緒に。</h2>
+      <p class="sec-lede">
+        協賛・出店・運営スタッフ・記録（写真／映像）など、月詠祭は今も仲間を探しています。
+        与える人と受け取る人を分けるのではなく、それぞれができることを持ち寄って、ひとつの大きな「和」を描いていく。
+      </p>
+    </div>
+
+    <div class="contact-grid">
+      <dl class="field" style="margin:0;">
+        <dt>Instagram</dt>
+        <dd><a href="https://www.instagram.com/tsukuyomimatsuri/" target="_blank" rel="noopener">@tsukuyomimatsuri</a><small>最新情報・出演時間の発表はこちらで。</small></dd>
+      </dl>
+      <dl class="field" style="margin:0;">
+        <dt>Mail</dt>
+        <dd><a href="mailto:tsukuyomimatsuri8@gmail.com">tsukuyomimatsuri8@gmail.com</a><small>協賛・出店・取材のお問い合わせ。</small></dd>
+      </dl>
+      <dl class="field" style="margin:0;">
+        <dt>募集中</dt>
+        <dd>運営スタッフ / 記録クルー<small>2 日間で 15〜20 名の運営スタッフ、写真・映像の記録クルーを募集しています。</small></dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+</main>
 
 <footer>
-  <p class="f-mark">月 詠 祭</p>
-  <p class="f-sub">人生は、神話だ。</p>
-  <p class="f-contact">お問い合わせ ／ <a href="mailto:tsukuyomimatsuri8@gmail.com">tsukuyomimatsuri8@gmail.com</a></p>
-  <p class="copy">© 月詠祭実行委員会</p>
+  <div class="wrap">
+    <p class="mark">月詠祭</p>
+    <p class="lat" style="font-size:.62rem;margin-top:1em;">Tsukuyomi Matsuri · Chiba 900th Anniversary Year</p>
+    <p class="org">
+      主催：月詠祭実行委員会 / TSUKUYOMI PROJECT<br>
+      会場：木の根ペンション（千葉県成田市木の根 296-1）
+    </p>
+    <p class="fine">
+      2026.09.26 SAT — 09.27 SUN ／ 入場無料 ／ 雨天決行（警報発表時は中止）<br>
+      掲載内容は準備の進行にともない変更となる場合があります。
+    </p>
+  </div>
 </footer>
 
 <script>
-  (function(){
-    var els = document.querySelectorAll('.rv');
-    if(!('IntersectionObserver' in window)){
-      els.forEach(function(e){e.classList.add('in')});
-      return;
-    }
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
-      });
-    },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
-    els.forEach(function(e){io.observe(e)});
-  })();
+(function () {
+  var bar = document.getElementById('navbar');
+  var hero = document.getElementById('top');
+  if (!bar || !hero) return;
+  var show = function () {
+    var past = window.scrollY > hero.offsetHeight - 80;
+    bar.classList.toggle('on', past);
+  };
+  show();
+  window.addEventListener('scroll', show, { passive: true });
+  window.addEventListener('resize', show);
+})();
 </script>
 
 </body>
