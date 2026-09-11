@@ -111,20 +111,66 @@ a{color:var(--gold)}
 .note{color:var(--mist);font-size:.86rem;letter-spacing:.06em}
 
 /* ---------- ナビ ---------- */
-.navbar{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;align-items:center;gap:clamp(12px,3vw,30px);
-  padding:.7rem var(--gut);background:rgba(2,6,18,.84);border-bottom:1px solid var(--rule-soft);
-  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-  transform:translateY(-102%);opacity:0;transition:transform .45s cubic-bezier(.2,.7,.2,1),opacity .35s ease}
-.navbar.on{transform:none;opacity:1}
-.navbar .mk{display:flex;align-items:center;text-decoration:none;flex:none}
-.navbar nav{display:flex;gap:clamp(12px,2.4vw,28px);align-items:center;margin-left:auto;overflow-x:auto;scrollbar-width:none}
-.navbar nav::-webkit-scrollbar{display:none}
-.navbar nav a{font-family:var(--f-jp);font-size:.82rem;letter-spacing:.14em;color:var(--paper);
-  text-decoration:none;white-space:nowrap;padding:.3em 0;border-bottom:1px solid transparent;transition:color .25s,border-color .25s}
-.navbar nav a:hover,.navbar nav a:focus-visible{color:var(--gold);border-bottom-color:var(--gold)}
-section[id]{scroll-margin-top:66px}
+/* transform / backdrop-filter を .navbar 本体に持たせると、
+   中の position:fixed オーバーレイがこの要素基準になってしまうため、
+   背景ぼかしは ::before に、出し入れは top で行う。 */
+.navbar{position:fixed;left:0;right:0;top:-110%;z-index:60;display:flex;align-items:center;gap:clamp(14px,3vw,32px);
+  padding:.75rem var(--gut);border-bottom:1px solid var(--rule-soft);
+  opacity:0;transition:top .45s cubic-bezier(.2,.7,.2,1),opacity .35s ease}
+.navbar::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(2,6,18,.88);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.navbar.on,.navbar.menu-open{top:0;opacity:1}
+.navbar .mk{position:relative;z-index:2;display:flex;align-items:center;text-decoration:none;flex:none}
 .logo-sm{display:block;height:1.35rem;width:4.3rem;color:#fff}
-@media (max-width:560px){.logo-sm{height:1.15rem;width:3.6rem}.navbar nav a{font-size:.76rem}}
+section[id]{scroll-margin-top:70px}
+
+/* ハンバーガー */
+.navtoggle{position:relative;z-index:2;margin-left:auto;flex:none;appearance:none;background:transparent;border:1px solid var(--rule-soft);
+  width:46px;height:46px;display:grid;place-content:center;gap:5px;cursor:pointer;padding:0;
+  transition:border-color .3s,background .3s}
+.navtoggle:hover,.navtoggle:focus-visible{border-color:var(--gold);background:rgba(227,193,116,.08)}
+.navtoggle i{display:block;width:20px;height:1px;background:var(--moon);transition:transform .35s ease,opacity .25s ease}
+.navtoggle[aria-expanded="true"] i:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.navtoggle[aria-expanded="true"] i:nth-child(2){opacity:0}
+.navtoggle[aria-expanded="true"] i:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+/* メニュー本体（モバイル＝全画面／デスクトップ＝横並び） */
+.navmenu{position:fixed;inset:0;z-index:1;display:flex;flex-direction:column;justify-content:center;
+  gap:0;padding:max(86px,14vh) var(--gut) max(40px,8vh);
+  background:linear-gradient(180deg, rgba(2,6,18,.97) 0%, rgba(5,13,32,.98) 55%, rgba(2,6,18,.99) 100%);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  opacity:0;visibility:hidden;transform:translateY(-10px);
+  transition:opacity .32s ease,transform .38s cubic-bezier(.2,.7,.2,1),visibility 0s linear .38s}
+.navmenu.open{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+.navmenu a{display:flex;align-items:center;justify-content:space-between;gap:1em;
+  font-family:var(--f-jp);font-weight:500;font-size:clamp(1.22rem,5.6vw,1.5rem);letter-spacing:.2em;
+  color:var(--moon);text-decoration:none;padding:clamp(.95em,3.4vw,1.15em) .2em;
+  border-bottom:1px solid var(--rule-soft);transition:color .25s,padding-left .3s}
+.navmenu a:first-of-type{border-top:1px solid var(--rule-soft)}
+.navmenu a .en{font-family:var(--f-num);font-size:.58em;letter-spacing:.24em;color:var(--gold-dp);flex:none}
+.navmenu a:hover,.navmenu a:focus-visible{color:#fff;padding-left:.9em}
+.navmenu a:hover .en,.navmenu a:focus-visible .en{color:var(--gold)}
+.navmenu a.ig{color:var(--gold);border-bottom:0;margin-top:clamp(26px,5vw,40px);justify-content:center;
+  border:1px solid var(--rule);font-size:clamp(.98rem,3.6vw,1.1rem);letter-spacing:.16em;padding:1em}
+.navmenu a.ig:hover,.navmenu a.ig:focus-visible{color:#fff;background:rgba(227,193,116,.1);border-color:var(--gold);padding-left:1em}
+.navmenu a.ig svg{width:19px;height:19px;flex:none;margin-right:.6em}
+body.navlock{position:fixed;left:0;right:0;width:100%;overflow:hidden}
+
+@media (min-width:861px){
+  .navtoggle{display:none}
+  .navmenu{position:static;inset:auto;z-index:auto;flex-direction:row;justify-content:flex-end;align-items:center;
+    gap:clamp(18px,2.6vw,34px);margin-left:auto;padding:0;background:none;backdrop-filter:none;-webkit-backdrop-filter:none;
+    opacity:1;visibility:visible;transform:none;transition:none}
+  .navmenu a{display:inline-flex;justify-content:center;font-size:.94rem;letter-spacing:.14em;
+    padding:.35em 0;border:0;border-bottom:1px solid transparent;white-space:nowrap}
+  .navmenu a:first-of-type{border-top:0}
+  .navmenu a .en{display:none}
+  .navmenu a:hover,.navmenu a:focus-visible{color:var(--gold);border-bottom-color:var(--gold);padding-left:0}
+  .navmenu a.ig{margin-top:0;border:0;padding:.35em 0;font-size:.94rem;letter-spacing:.14em}
+  .navmenu a.ig:hover,.navmenu a.ig:focus-visible{background:none;border:0;border-bottom:1px solid transparent;padding-left:0}
+  .navmenu a.ig svg{width:16px;height:16px;margin-right:.5em}
+}
+@media (max-width:560px){.logo-sm{height:1.15rem;width:3.6rem}}
 
 /* ---------- ファーストビュー ---------- */
 .hero{position:relative;overflow:hidden;text-align:center;min-height:100svh;
@@ -280,6 +326,9 @@ section[id]{scroll-margin-top:66px}
 .ig-cta svg{width:16px;height:16px;flex:none}
 .ig-cta:hover,.ig-cta:focus-visible{border-color:var(--gold);color:#fff;background:rgba(227,193,116,.1)}
 
+.welcome{margin-top:clamp(42px,6.4vw,68px);color:var(--gold);
+  font-size:clamp(1.04rem,3vw,1.26rem);letter-spacing:.24em;text-indent:.24em;line-height:2}
+
 /* ---------- 軌跡（月詠祭内） ---------- */
 .trace-wrap{margin-top:clamp(72px,11vw,130px)}
 .trace-wrap .sub-t{margin-bottom:clamp(34px,5vw,52px)}
@@ -290,6 +339,7 @@ section[id]{scroll-margin-top:66px}
 .c-big{font-weight:700;color:var(--moon);font-size:clamp(1.3rem,4.6vw,2rem);letter-spacing:.16em;line-height:2}
 .c-big.last{margin-top:clamp(34px,5vw,54px)}
 .c-sub{margin-top:clamp(26px,4vw,40px);color:var(--paper);font-size:clamp(1rem,2.5vw,1.16rem);line-height:2.7;letter-spacing:.1em}
+.closing .c-sub + .c-big{margin-top:clamp(36px,5.4vw,58px)}
 .c-sign{margin-top:clamp(30px,4.4vw,46px);color:var(--gold);font-size:.86rem;letter-spacing:.28em;text-indent:.28em}
 
 /* ---------- フッター ---------- */
@@ -445,12 +495,15 @@ fill="currentColor" stroke="none"><path d="M15960 6890 c0 -5 -9 -10 -20 -10 -11 
 
 <div class="navbar" id="navbar">
   <a class="mk" href="#top"><svg class="logo-sm" viewBox="0 0 2154 690" role="img" aria-label="月詠祭"><use href="#logo"/></svg></a>
-  <nav aria-label="サイト内リンク">
-    <a href="#about">月詠祭</a>
-    <a href="#artists">出演</a>
-    <a href="#timetable">タイムテーブル</a>
-    <a href="#access">アクセス</a>
-    <a class="ig" href="https://www.instagram.com/tsukuyomimatsuri/" target="_blank" rel="noopener" aria-label="月詠祭 公式 Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ig"/></svg><b>Instagram</b></a>
+  <button class="navtoggle" id="navtoggle" type="button" aria-expanded="false" aria-controls="navmenu" aria-label="メニューを開く">
+    <i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i>
+  </button>
+  <nav class="navmenu" id="navmenu" aria-label="サイト内リンク">
+    <a href="#about">月詠祭<span class="en">ABOUT</span></a>
+    <a href="#artists">出演<span class="en">ARTISTS</span></a>
+    <a href="#timetable">タイムテーブル<span class="en">TIME TABLE</span></a>
+    <a href="#access">アクセス<span class="en">ACCESS</span></a>
+    <a class="ig" href="https://www.instagram.com/tsukuyomimatsuri/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ig"/></svg>Instagram</a>
   </nav>
 </div>
 
@@ -483,13 +536,22 @@ fill="currentColor" stroke="none"><path d="M15960 6890 c0 -5 -9 -10 -20 -10 -11 
     <h2 class="sec-t">月詠祭</h2>
     <div class="orn" aria-hidden="true"><i></i><svg viewBox="0 0 16 16"><use href="#hanabishi"/></svg><i></i></div>
     <p class="lead-jp">
-      月詠祭は、音・火・祈りを通して、<br>
-      自分自身と八百万の神々に気づく祭。
+      月を詠み、火に祈る。<br>
+      音は魂をひらき、踊りは境界をほどいていく。
     </p>
     <p class="lead-jp">
-      演者も、出店者も、来場者も。<br>
-      その場に集う全員で、ひとつの祭を創ります。
+      神は、空から降ろすものではない。<br>
+      己の内に宿る八百万を、呼び醒ますもの。
     </p>
+    <p class="lead-jp">
+      ここでは、演者も、出店者も、来場者もない。<br>
+      集う者すべてが、祭人。
+    </p>
+    <p class="lead-jp">
+      それぞれの命が響き合い、<br>
+      まだ見ぬ祭を創り出す。
+    </p>
+    <p class="welcome">月詠の世界へようこそ</p>
   </div>
 
   <div class="wrap trace-wrap">
@@ -776,13 +838,28 @@ fill="currentColor" stroke="none"><path d="M15960 6890 c0 -5 -9 -10 -20 -10 -11 
 <section class="closing">
   <div class="wrap narrow mid">
     <div class="orn" aria-hidden="true"><i></i><svg viewBox="0 0 16 16"><use href="#hanabishi"/></svg><i></i></div>
-    <p class="c-big">迷ったら、来てください。</p>
     <p class="c-sub">
-      理由はいりません。<br>
-      火のそばに立って、月を見上げる。<br>
-      それだけで、この夜は成り立ちます。
+      九百年の物語を、<br>
+      受け継ぐだけで終わらせない。
     </p>
-    <p class="c-big last">九月の終わり、木の根で。</p>
+    <p class="c-sub">
+      音に身を委ね、火を囲み、<br>
+      同じ月を見上げる。
+    </p>
+    <p class="c-sub">
+      あなたが、この場にいること。<br>
+      それだけでひとつの祈りとなり、<br>
+      祭を未来へつなぐ火になる。
+    </p>
+    <p class="c-big">千葉開府千年、その先へ。</p>
+    <p class="c-sub">
+      愛と平和に満ちた地球を、<br>
+      ともに祭ろう。
+    </p>
+    <p class="c-big last">
+      月が満ちる頃、<br>
+      木の根で逢いましょう。
+    </p>
     <p class="c-sign">月詠祭実行委員会</p>
   </div>
 </section>
@@ -818,6 +895,42 @@ fill="currentColor" stroke="none"><path d="M15960 6890 c0 -5 -9 -10 -20 -10 -11 
     window.addEventListener('scroll', show, { passive: true });
     window.addEventListener('resize', show);
   }
+})();
+
+/* メニュー開閉 */
+(function () {
+  var btn = document.getElementById('navtoggle'),
+      menu = document.getElementById('navmenu'),
+      bar = document.getElementById('navbar');
+  if (!btn || !menu) return;
+  var desktop = window.matchMedia('(min-width:861px)'), saved = 0;
+  function setOpen(on) {
+    if (on === (btn.getAttribute('aria-expanded') === 'true')) return;
+    btn.setAttribute('aria-expanded', on ? 'true' : 'false');
+    btn.setAttribute('aria-label', on ? 'メニューを閉じる' : 'メニューを開く');
+    menu.classList.toggle('open', on);
+    if (bar) bar.classList.toggle('menu-open', on);
+    if (on) {
+      saved = window.scrollY || window.pageYOffset || 0;
+      document.body.style.top = (-saved) + 'px';
+      document.body.classList.add('navlock');
+    } else {
+      document.body.classList.remove('navlock');
+      document.body.style.top = '';
+      window.scrollTo(0, saved);
+    }
+  }
+  btn.addEventListener('click', function () {
+    setOpen(btn.getAttribute('aria-expanded') !== 'true');
+  });
+  menu.addEventListener('click', function (e) {
+    if (e.target.closest('a')) setOpen(false);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') { setOpen(false); btn.focus(); }
+  });
+  function sync() { if (desktop.matches) setOpen(false); }
+  desktop.addEventListener ? desktop.addEventListener('change', sync) : desktop.addListener(sync);
 })();
 
 /* 霧・光・水面が静かに呼吸する程度 */
