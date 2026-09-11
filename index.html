@@ -240,6 +240,21 @@ body.navlock{position:fixed;left:0;right:0;width:100%;overflow:hidden}
 .artists .ph{aspect-ratio:3/4}
 .artists .n{margin-top:.9em;font-size:.98rem;letter-spacing:.06em;color:var(--moon);line-height:1.5}
 .artists .r{margin-top:.3em;font-family:var(--f-sans);font-size:.72rem;letter-spacing:.1em;color:var(--mist)}
+.artists a{display:block;text-decoration:none;color:inherit;
+  transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.artists a .ph{transition:border-color .3s,box-shadow .35s}
+.ig-badge{position:absolute;right:8px;bottom:8px;z-index:2;width:27px;height:27px;
+  display:grid;place-items:center;background:rgba(2,6,18,.7);border:1px solid var(--rule);
+  color:var(--gold);opacity:.88;transition:opacity .3s,color .3s,border-color .3s,background .3s}
+.ig-badge svg{width:14px;height:14px}
+.artists a:hover,.artists a:focus-visible{transform:translateY(-4px)}
+.artists a:hover .ph,.artists a:focus-visible .ph{border-color:var(--gold);
+  box-shadow:0 12px 34px rgba(2,6,18,.6),0 0 22px rgba(227,193,116,.16)}
+.artists a:hover .n,.artists a:focus-visible .n{color:#fff}
+.artists a:hover .ig-badge,.artists a:focus-visible .ig-badge{opacity:1;color:#fff;
+  border-color:var(--gold);background:rgba(227,193,116,.22)}
+@media (hover:none){.artists a:hover{transform:none}}
+
 .artists + .note{margin-top:clamp(26px,4vw,40px)}
 
 /* ---------- 八百万市 ---------- */
@@ -606,21 +621,21 @@ fill="currentColor" stroke="none"><path d="M15960 6890 c0 -5 -9 -10 -20 -10 -11 
     <h2 class="sec-t mid">出演</h2>
     <div class="orn" aria-hidden="true"><i></i><svg viewBox="0 0 16 16"><use href="#hanabishi"/></svg><i></i></div>
     <ul class="artists">
-      <li><figure class="ph" style="background-image:url(&quot;a-akira-ikeda.webp&quot;)"><span aria-hidden="true"></span></figure><p class="n">akira∞ikeda</p></li>
-      <li><figure class="ph" style="background-image:url(&quot;a-jomon-mind.webp&quot;)"><span aria-hidden="true"></span></figure><p class="n">JOMON MIND</p></li>
+      <li><a href="https://www.instagram.com/akira.ikeda.sound/" target="_blank" rel="noopener" aria-label="akira∞ikeda の Instagram"><figure class="ph" style="background-image:url(&quot;a-akira-ikeda.webp&quot;)"><span aria-hidden="true"></span><i class="ig-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#ig"/></svg></i></figure><p class="n">akira∞ikeda</p></a></li>
+      <li><a href="https://www.instagram.com/jomon.mind/" target="_blank" rel="noopener" aria-label="JOMON MIND の Instagram"><figure class="ph" style="background-image:url(&quot;a-jomon-mind.webp&quot;)"><span aria-hidden="true"></span><i class="ig-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#ig"/></svg></i></figure><p class="n">JOMON MIND</p></a></li>
       <li><figure class="ph" style="background-image:url(&quot;a-kaguyamika.webp&quot;)"><span aria-hidden="true"></span></figure><p class="n">KaguyaMika</p></li>
-      <li><figure class="ph" style="background-image:url(&quot;a-katakamuii.webp&quot;)"><span aria-hidden="true"></span></figure><p class="n">Katakamuii</p></li>
-      <li><figure class="ph" style="background-image:url(&quot;a-kenta-hayashi.webp&quot;)"><span aria-hidden="true"></span></figure><p class="n">KENTA HAYASHI</p></li>
-      <li><figure class="ph" style="background-image:url(&quot;a-sho-ishii.webp&quot;)"><span aria-hidden="true"></span></figure><p class="n">Sho Ishii</p></li>
-      <li><figure class="ph" style="background-image:url(&quot;a-sunchez.webp&quot;)"><span aria-hidden="true"></span></figure><p class="n">SunChez</p><p class="r">SOUND JOURNEY</p></li>
-      <li><figure class="ph" style="background-image:url(&quot;a-taikodelics.webp&quot;)"><span aria-hidden="true"></span></figure><p class="n">TAIKODELICS</p></li>
-      <li><figure class="ph" style="background-image:url(&quot;a-tonbo.webp&quot;)"><span aria-hidden="true"></span></figure><p class="n">TONBO</p><p class="r">DJ 蜻蛉</p></li>
-      <li><figure class="ph" style="background-image:url(&quot;a-tsubasa-nakai.webp&quot;)"><span aria-hidden="true"></span></figure><p class="n">TSUBASA NAKAI</p></li>
-      <li><figure class="ph" style="background-image:url(&quot;a-vague-van-vreeze.webp&quot;)"><span aria-hidden="true"></span></figure><p class="n">VAGUE VAN VREEZE</p><p class="r">CEREMONY</p></li>
-      <li><figure class="ph"><span aria-hidden="true"></span></figure><p class="n">VJ Laser Boy</p></li>
-      <li><figure class="ph"><span aria-hidden="true"></span></figure><p class="n">コマリエ</p><p class="r">書道 LIVE アート</p></li>
-      <li><figure class="ph" style="background-image:url(&quot;a-iyasaka-shimai.webp&quot;)"><span aria-hidden="true"></span></figure><p class="n">彌榮姉妹</p></li>
-      <li><figure class="ph" style="background-image:url(&quot;a-mikage.webp&quot;)"><span aria-hidden="true"></span></figure><p class="n">三影</p><p class="r">四股舞</p></li>
+      <li><a href="https://www.instagram.com/katakamuii/" target="_blank" rel="noopener" aria-label="Katakamuii の Instagram"><figure class="ph" style="background-image:url(&quot;a-katakamuii.webp&quot;)"><span aria-hidden="true"></span><i class="ig-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#ig"/></svg></i></figure><p class="n">Katakamuii</p></a></li>
+      <li><a href="https://www.instagram.com/kentahayashiofficial/" target="_blank" rel="noopener" aria-label="KENTA HAYASHI の Instagram"><figure class="ph" style="background-image:url(&quot;a-kenta-hayashi.webp&quot;)"><span aria-hidden="true"></span><i class="ig-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#ig"/></svg></i></figure><p class="n">KENTA HAYASHI</p></a></li>
+      <li><a href="https://www.instagram.com/onedrumslife/" target="_blank" rel="noopener" aria-label="Sho Ishii の Instagram"><figure class="ph" style="background-image:url(&quot;a-sho-ishii.webp&quot;)"><span aria-hidden="true"></span><i class="ig-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#ig"/></svg></i></figure><p class="n">Sho Ishii</p></a></li>
+      <li><a href="https://www.instagram.com/sunchez_official/" target="_blank" rel="noopener" aria-label="SunChez の Instagram"><figure class="ph" style="background-image:url(&quot;a-sunchez.webp&quot;)"><span aria-hidden="true"></span><i class="ig-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#ig"/></svg></i></figure><p class="n">SunChez</p><p class="r">SOUND JOURNEY</p></a></li>
+      <li><a href="https://www.instagram.com/taikodelics/" target="_blank" rel="noopener" aria-label="TAIKODELICS の Instagram"><figure class="ph" style="background-image:url(&quot;a-taikodelics.webp&quot;)"><span aria-hidden="true"></span><i class="ig-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#ig"/></svg></i></figure><p class="n">TAIKODELICS</p></a></li>
+      <li><a href="https://www.instagram.com/tonboq/" target="_blank" rel="noopener" aria-label="TONBO の Instagram"><figure class="ph" style="background-image:url(&quot;a-tonbo.webp&quot;)"><span aria-hidden="true"></span><i class="ig-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#ig"/></svg></i></figure><p class="n">TONBO</p><p class="r">DJ 蜻蛉</p></a></li>
+      <li><a href="https://www.instagram.com/vvv_tsubasa/" target="_blank" rel="noopener" aria-label="TSUBASA NAKAI の Instagram"><figure class="ph" style="background-image:url(&quot;a-tsubasa-nakai.webp&quot;)"><span aria-hidden="true"></span><i class="ig-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#ig"/></svg></i></figure><p class="n">TSUBASA NAKAI</p></a></li>
+      <li><a href="https://www.instagram.com/vaguevanvreeze/" target="_blank" rel="noopener" aria-label="VAGUE VAN VREEZE の Instagram"><figure class="ph" style="background-image:url(&quot;a-vague-van-vreeze.webp&quot;)"><span aria-hidden="true"></span><i class="ig-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#ig"/></svg></i></figure><p class="n">VAGUE VAN VREEZE</p><p class="r">CEREMONY</p></a></li>
+      <li><a href="https://www.instagram.com/vjkagerou/" target="_blank" rel="noopener" aria-label="VJ Laser Boy の Instagram"><figure class="ph"><span aria-hidden="true"></span><i class="ig-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#ig"/></svg></i></figure><p class="n">VJ Laser Boy</p></a></li>
+      <li><a href="https://www.instagram.com/comariechan/" target="_blank" rel="noopener" aria-label="コマリエ の Instagram"><figure class="ph"><span aria-hidden="true"></span><i class="ig-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#ig"/></svg></i></figure><p class="n">コマリエ</p><p class="r">書道 LIVE アート</p></a></li>
+      <li><a href="https://www.instagram.com/iyasaka_sisters_official/" target="_blank" rel="noopener" aria-label="彌榮姉妹 の Instagram"><figure class="ph" style="background-image:url(&quot;a-iyasaka-shimai.webp&quot;)"><span aria-hidden="true"></span><i class="ig-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#ig"/></svg></i></figure><p class="n">彌榮姉妹</p></a></li>
+      <li><a href="https://www.instagram.com/mikage_shikomai/" target="_blank" rel="noopener" aria-label="三影 の Instagram"><figure class="ph" style="background-image:url(&quot;a-mikage.webp&quot;)"><span aria-hidden="true"></span><i class="ig-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#ig"/></svg></i></figure><p class="n">三影</p><p class="r">四股舞</p></a></li>
     </ul>
     <div class="mid">
       <p class="note">出演時間の詳細は、Instagram をご覧ください。</p>
@@ -801,8 +816,8 @@ fill="currentColor" stroke="none"><path d="M15960 6890 c0 -5 -9 -10 -20 -10 -11 
 
     <div class="warn">
       <p>会場に一般来場者用の駐車場はありません。<br>
-        木の根は、いま人の暮らしている土地です。路上や私有地に停めてしまうと、そこに住む方の一日を壊してしまいます。
-        乗り合わせか、公共交通機関でお越しください。</p>
+        徒歩、タクシー、公共交通機関にてお越しください。<br>
+        皆様のご来店心よりお待ちしております。</p>
     </div>
 
     <div class="map">
