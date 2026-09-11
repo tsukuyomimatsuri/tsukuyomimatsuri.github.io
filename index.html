@@ -236,7 +236,7 @@ body.navlock{position:fixed;left:0;right:0;width:100%;overflow:hidden}
 
 /* ---------- アーティスト ---------- */
 .artists{list-style:none;margin:0;padding:0;display:grid;gap:clamp(18px,2.6vw,30px);
-  grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+  grid-template-columns:repeat(auto-fill,minmax(158px,1fr))}
 .artists .ph{aspect-ratio:3/4}
 .artists .n{margin-top:.9em;font-size:.98rem;letter-spacing:.06em;color:var(--moon);line-height:1.5}
 .artists .r{margin-top:.3em;font-family:var(--f-sans);font-size:.72rem;letter-spacing:.1em;color:var(--mist)}
@@ -301,14 +301,6 @@ body.navlock{position:fixed;left:0;right:0;width:100%;overflow:hidden}
   text-indent:.18em;color:var(--gold)}
 @media (min-width:880px){.tt-grid{grid-template-columns:1fr 1fr;gap:clamp(44px,5vw,68px)}}
 @media (max-width:360px){.tt li{grid-template-columns:4.1em 1fr}}
-
-/* ---------- 願い送り ---------- */
-.wish{width:min(560px,100%);margin-inline:auto;text-align:left}
-.wish .steps{list-style:none;margin:clamp(32px,4.6vw,44px) 0 0;padding:0;
-  display:flex;flex-direction:column;gap:clamp(20px,2.8vw,26px)}
-.wish .steps li{display:grid;grid-template-columns:2.4em 1fr;gap:1em;align-items:baseline}
-.wish .steps .no{font-size:1.02rem;letter-spacing:.1em;color:var(--gold)}
-.wish .steps p{margin:0;color:var(--paper);font-size:.96rem;line-height:2.1}
 
 /* ---------- Instagram 導線 ---------- */
 .navbar nav a.ig{display:inline-flex;align-items:center;gap:.5em;color:var(--gold);border-bottom-color:transparent;flex:none}
@@ -419,7 +411,15 @@ a:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--gold);outline-o
     },
     {
       "@type": "PerformingGroup",
+      "name": "SunChez"
+    },
+    {
+      "@type": "PerformingGroup",
       "name": "TSUBASA NAKAI"
+    },
+    {
+      "@type": "PerformingGroup",
+      "name": "VAGUE VAN VREEZE"
     },
     {
       "@type": "PerformingGroup",
@@ -456,10 +456,6 @@ a:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--gold);outline-o
     {
       "@type": "PerformingGroup",
       "name": "三影"
-    },
-    {
-      "@type": "PerformingGroup",
-      "name": "DJ TSUKUYOMI"
     }
   ]
 }
@@ -598,7 +594,7 @@ fill="currentColor" stroke="none"><path d="M15960 6890 c0 -5 -9 -10 -20 -10 -11 
       <div><dt>日程</dt><dd>2026年9月26日（土）— 9月27日（日）<small>26日 13:00 開場、27日 20:00 終了</small></dd></div>
       <div><dt>会場</dt><dd>木の根ペンション<small>千葉県成田市木の根 296-1</small></dd></div>
       <div><dt>入場</dt><dd>無料<small>会場内の飲食・物販は各店舗にて</small></dd></div>
-      <div><dt>開催</dt><dd>雨天決行<small>気象警報が発表された場合のみ中止</small></dd></div>
+      <div><dt>中止条件</dt><dd>雨天決行<small>気象警報が発表された場合のみ中止</small></dd></div>
       <div><dt>主催</dt><dd>月詠祭実行委員会 ／ TSUKUYOMI PROJECT</dd></div>
     </dl>
   </div>
@@ -610,23 +606,24 @@ fill="currentColor" stroke="none"><path d="M15960 6890 c0 -5 -9 -10 -20 -10 -11 
     <h2 class="sec-t mid">出演</h2>
     <div class="orn" aria-hidden="true"><i></i><svg viewBox="0 0 16 16"><use href="#hanabishi"/></svg><i></i></div>
     <ul class="artists">
-      <li><figure class="ph"><span aria-hidden="true"></span></figure><p class="n">Katakamuii</p><p class="r">両日</p></li>
-      <li><figure class="ph"><span aria-hidden="true"></span></figure><p class="n">TAIKODELICS</p><p class="r">両日</p></li>
-      <li><figure class="ph"><span aria-hidden="true"></span></figure><p class="n">Sho Ishii</p><p class="r">両日</p></li>
-      <li><figure class="ph"><span aria-hidden="true"></span></figure><p class="n">TSUBASA NAKAI</p><p class="r">両日</p></li>
-      <li><figure class="ph"><span aria-hidden="true"></span></figure><p class="n">彌榮姉妹</p><p class="r">両日</p></li>
-      <li><figure class="ph"><span aria-hidden="true"></span></figure><p class="n">JOMON MIND</p><p class="r">9.26</p></li>
-      <li><figure class="ph"><span aria-hidden="true"></span></figure><p class="n">三影</p><p class="r">9.26 ／ 四股舞</p></li>
-      <li><figure class="ph"><span aria-hidden="true"></span></figure><p class="n">コマリエ</p><p class="r">9.26 ／ 書道 LIVE アート</p></li>
-      <li><figure class="ph"><span aria-hidden="true"></span></figure><p class="n">VJ Laser Boy</p><p class="r">9.26 午後より</p></li>
-      <li><figure class="ph"><span aria-hidden="true"></span></figure><p class="n">TONBO</p><p class="r">9.27 0:00 ／ DJ 蜻蛉</p></li>
-      <li><figure class="ph"><span aria-hidden="true"></span></figure><p class="n">akira∞ikeda</p><p class="r">9.27</p></li>
-      <li><figure class="ph"><span aria-hidden="true"></span></figure><p class="n">KENTA HAYASHI</p><p class="r">9.27</p></li>
-      <li><figure class="ph"><span aria-hidden="true"></span></figure><p class="n">KaguyaMika</p><p class="r">9.27</p></li>
-      <li><figure class="ph"><span aria-hidden="true"></span></figure><p class="n">DJ TSUKUYOMI</p><p class="r">両日 ／ 主催</p></li>
+      <li><figure class="ph" style="background-image:url(&quot;a-akira-ikeda.webp&quot;)"><span aria-hidden="true"></span></figure><p class="n">akira∞ikeda</p></li>
+      <li><figure class="ph" style="background-image:url(&quot;a-jomon-mind.webp&quot;)"><span aria-hidden="true"></span></figure><p class="n">JOMON MIND</p></li>
+      <li><figure class="ph" style="background-image:url(&quot;a-kaguyamika.webp&quot;)"><span aria-hidden="true"></span></figure><p class="n">KaguyaMika</p></li>
+      <li><figure class="ph" style="background-image:url(&quot;a-katakamuii.webp&quot;)"><span aria-hidden="true"></span></figure><p class="n">Katakamuii</p></li>
+      <li><figure class="ph" style="background-image:url(&quot;a-kenta-hayashi.webp&quot;)"><span aria-hidden="true"></span></figure><p class="n">KENTA HAYASHI</p></li>
+      <li><figure class="ph" style="background-image:url(&quot;a-sho-ishii.webp&quot;)"><span aria-hidden="true"></span></figure><p class="n">Sho Ishii</p></li>
+      <li><figure class="ph" style="background-image:url(&quot;a-sunchez.webp&quot;)"><span aria-hidden="true"></span></figure><p class="n">SunChez</p><p class="r">SOUND JOURNEY</p></li>
+      <li><figure class="ph" style="background-image:url(&quot;a-taikodelics.webp&quot;)"><span aria-hidden="true"></span></figure><p class="n">TAIKODELICS</p></li>
+      <li><figure class="ph" style="background-image:url(&quot;a-tonbo.webp&quot;)"><span aria-hidden="true"></span></figure><p class="n">TONBO</p><p class="r">DJ 蜻蛉</p></li>
+      <li><figure class="ph" style="background-image:url(&quot;a-tsubasa-nakai.webp&quot;)"><span aria-hidden="true"></span></figure><p class="n">TSUBASA NAKAI</p></li>
+      <li><figure class="ph" style="background-image:url(&quot;a-vague-van-vreeze.webp&quot;)"><span aria-hidden="true"></span></figure><p class="n">VAGUE VAN VREEZE</p><p class="r">CEREMONY</p></li>
+      <li><figure class="ph"><span aria-hidden="true"></span></figure><p class="n">VJ Laser Boy</p></li>
+      <li><figure class="ph"><span aria-hidden="true"></span></figure><p class="n">コマリエ</p><p class="r">書道 LIVE アート</p></li>
+      <li><figure class="ph" style="background-image:url(&quot;a-iyasaka-shimai.webp&quot;)"><span aria-hidden="true"></span></figure><p class="n">彌榮姉妹</p></li>
+      <li><figure class="ph" style="background-image:url(&quot;a-mikage.webp&quot;)"><span aria-hidden="true"></span></figure><p class="n">三影</p><p class="r">四股舞</p></li>
     </ul>
     <div class="mid">
-      <p class="note">出演時間の詳細は、決まりしだい Instagram でお知らせします。</p>
+      <p class="note">出演時間の詳細は、Instagram をご覧ください。</p>
       <a class="ig-cta" href="https://www.instagram.com/tsukuyomimatsuri/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ig"/></svg>最新情報をフォローする</a>
     </div>
   </div>
@@ -659,11 +656,11 @@ fill="currentColor" stroke="none"><path d="M15960 6890 c0 -5 -9 -10 -20 -10 -11 
               </span>
             </span>
           </li>
-          <li class="cross" aria-hidden="true"><span class="t"></span><span class="e"><span class="tt-cross">日付が変わる</span></span></li>
           <li>
             <span class="t">00:00</span>
             <span class="e">TONBO<span class="en">DJ 蜻蛉 ／ 9.27</span></span>
           </li>
+          <li class="cross" aria-hidden="true"><span class="t"></span><span class="e"><span class="tt-cross">日付が変わる</span></span></li>
           <li class="moon">
             <span class="t">01:49</span>
             <span class="e">満月の刻<span class="en">FULL MOON ／ HARVEST MOON</span>
@@ -725,11 +722,11 @@ fill="currentColor" stroke="none"><path d="M15960 6890 c0 -5 -9 -10 -20 -10 -11 
     <div class="yao">
       <div>
         <p class="c">飲食</p>
-        <ul><li>月詠の食卓</li><li>魔法食堂</li><li>NOMADS BURGER</li><li>オーガニックピザ</li><li>DA'KINE COFFEE BEAN</li></ul>
+        <ul><li>彌榮食堂</li><li>魔法食堂</li><li>NOMADS BURGER</li><li>オーガニックピザ</li><li>DA'KINE COFFEE BEAN</li></ul>
       </div>
       <div>
         <p class="c">物販</p>
-        <ul><li>VAGUE VAN VREEZE</li><li>シルクスクリーン</li><li>これもんのこれ市</li></ul>
+        <ul><li>VAGUE VAN VREEZE</li><li>シルクスクリーン</li></ul>
       </div>
       <div>
         <p class="c">美容・ヒーリング</p>
@@ -743,21 +740,23 @@ fill="currentColor" stroke="none"><path d="M15960 6890 c0 -5 -9 -10 -20 -10 -11 
   </div>
 </section>
 
-<!-- ============================== 願い送り ============================== -->
+<!-- ============================== 月結びの儀 ============================== -->
 <section class="sub">
   <div class="wrap narrow mid">
-    <h3 class="sub-t">願い送り</h3>
+    <h3 class="sub-t">月結びの儀</h3>
     <p class="lead-jp">
-      竹の板に願いを書き、<br>
-      火にくべて、煙とともに送るセレモニー。
+      竹に、一人ひとりの願いを記します。<br>
+      願いを宿した竹は、祭の間、月明かりの下に飾られます。
     </p>
-    <div class="wish">
-      <ol class="steps">
-        <li><span class="no">一</span><p>竹の板を受け取ります。</p></li>
-        <li><span class="no">二</span><p>願いを書きます。誰かに見せるためのものではありません。言葉にした瞬間に、それは自分のものになります。</p></li>
-        <li><span class="no">三</span><p>火にくべます。あとは、煙が運びます。</p></li>
-      </ol>
-    </div>
+    <p class="lead-jp">
+      そして、祭の終わり。<br>
+      すべての竹を焚き上げ、願いを天へ送ります。
+    </p>
+    <p class="lead-jp">
+      同じ月を見上げ、同じ火を囲み、<br>
+      それぞれの祈りを未来へ結ぶ。
+    </p>
+    <p class="welcome">月詠祭を締めくくる、祈りの儀</p>
   </div>
 </section>
 
