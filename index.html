@@ -135,38 +135,44 @@ section[id]{scroll-margin-top:70px}
 .navtoggle[aria-expanded="true"] i:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
 
 /* メニュー本体（モバイル＝全画面／デスクトップ＝横並び） */
-.navmenu{position:fixed;inset:0;z-index:1;display:flex;flex-direction:column;justify-content:center;
-  gap:0;padding:max(86px,14vh) var(--gut) max(40px,8vh);
+.navmenu{position:fixed;inset:0;z-index:1;display:flex;flex-direction:column;justify-content:flex-start;
+  gap:0;padding:max(84px,11vh) var(--gut) max(40px,7vh);overflow-y:auto;overscroll-behavior:contain;
   background:linear-gradient(180deg, rgba(2,6,18,.97) 0%, rgba(5,13,32,.98) 55%, rgba(2,6,18,.99) 100%);
   backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
   opacity:0;visibility:hidden;transform:translateY(-10px);
   transition:opacity .32s ease,transform .38s cubic-bezier(.2,.7,.2,1),visibility 0s linear .38s}
 .navmenu.open{opacity:1;visibility:visible;transform:none;transition-delay:0s}
 .navmenu a{display:flex;align-items:center;justify-content:space-between;gap:1em;
-  font-family:var(--f-jp);font-weight:500;font-size:clamp(1.22rem,5.6vw,1.5rem);letter-spacing:.2em;
-  color:var(--moon);text-decoration:none;padding:clamp(.95em,3.4vw,1.15em) .2em;
+  font-family:var(--f-jp);font-weight:500;font-size:clamp(1.02rem,4vw,1.15rem);letter-spacing:.18em;
+  color:var(--moon);text-decoration:none;padding:clamp(1.08em,4vw,1.3em) .15em;
   border-bottom:1px solid var(--rule-soft);transition:color .25s,padding-left .3s}
 .navmenu a:first-of-type{border-top:1px solid var(--rule-soft)}
-.navmenu a .en{font-family:var(--f-num);font-size:.58em;letter-spacing:.24em;color:var(--gold-dp);flex:none}
+.navmenu a .en{font-family:var(--f-num);font-size:.66em;letter-spacing:.22em;color:var(--gold-dp);flex:none}
 .navmenu a:hover,.navmenu a:focus-visible{color:#fff;padding-left:.9em}
 .navmenu a:hover .en,.navmenu a:focus-visible .en{color:var(--gold)}
-.navmenu a.ig{color:var(--gold);border-bottom:0;margin-top:clamp(26px,5vw,40px);justify-content:center;
-  border:1px solid var(--rule);font-size:clamp(.98rem,3.6vw,1.1rem);letter-spacing:.16em;padding:1em}
+.navmenu a.ig{color:var(--gold);border-bottom:0;margin-top:clamp(26px,4.4vw,36px);flex:none;
+  flex-wrap:wrap;justify-content:center;gap:.1em .7em;
+  border:1px solid var(--rule);font-size:clamp(.96rem,3.4vw,1.06rem);letter-spacing:.16em;
+  padding:1.05em 1em;background:rgba(227,193,116,.06)}
+.navmenu a.ig em{flex-basis:100%;font-style:normal;font-family:var(--f-num);
+  font-size:.66em;letter-spacing:.2em;color:var(--gold-dp);text-align:center;margin-top:.35em}
 .navmenu a.ig:hover,.navmenu a.ig:focus-visible{color:#fff;background:rgba(227,193,116,.1);border-color:var(--gold);padding-left:1em}
-.navmenu a.ig svg{width:19px;height:19px;flex:none;margin-right:.6em}
+.navmenu a.ig svg{width:17px;height:17px;flex:none;margin-right:.1em}
 body.navlock{position:fixed;left:0;right:0;width:100%;overflow:hidden}
 
 @media (min-width:861px){
   .navtoggle{display:none}
   .navmenu{position:static;inset:auto;z-index:auto;flex-direction:row;justify-content:flex-end;align-items:center;
-    gap:clamp(18px,2.6vw,34px);margin-left:auto;padding:0;background:none;backdrop-filter:none;-webkit-backdrop-filter:none;
+    gap:clamp(13px,1.9vw,24px);margin-left:auto;padding:0;background:none;backdrop-filter:none;-webkit-backdrop-filter:none;
     opacity:1;visibility:visible;transform:none;transition:none}
-  .navmenu a{display:inline-flex;justify-content:center;font-size:.94rem;letter-spacing:.14em;
+  .navmenu a{display:inline-flex;justify-content:center;font-size:.88rem;letter-spacing:.1em;
     padding:.35em 0;border:0;border-bottom:1px solid transparent;white-space:nowrap}
   .navmenu a:first-of-type{border-top:0}
   .navmenu a .en{display:none}
   .navmenu a:hover,.navmenu a:focus-visible{color:var(--gold);border-bottom-color:var(--gold);padding-left:0}
-  .navmenu a.ig{margin-top:0;border:0;padding:.35em 0;font-size:.94rem;letter-spacing:.14em}
+  .navmenu a.ig{margin-top:0;border:1px solid var(--rule);background:rgba(227,193,116,.06);
+    padding:.55em 1.1em;font-size:.86rem;letter-spacing:.1em;gap:.5em}
+  .navmenu a.ig em{display:none}
   .navmenu a.ig:hover,.navmenu a.ig:focus-visible{background:none;border:0;border-bottom:1px solid transparent;padding-left:0}
   .navmenu a.ig svg{width:16px;height:16px;margin-right:.5em}
 }
@@ -318,27 +324,103 @@ body.navlock{position:fixed;left:0;right:0;width:100%;overflow:hidden}
 @media (max-width:360px){.tt li{grid-template-columns:4.1em 1fr}}
 
 /* ---------- Instagram 導線 ---------- */
-.navbar nav a.ig{display:inline-flex;align-items:center;gap:.5em;color:var(--gold);border-bottom-color:transparent;flex:none}
-.navbar nav a.ig svg{width:14px;height:14px}
-.navbar nav a.ig:hover,.navbar nav a.ig:focus-visible{color:#fff;border-bottom-color:transparent}
-.navbar nav a.ig svg{width:15px;height:15px}
-@media (max-width:700px){
-  .navbar nav a.ig b{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-  .navbar nav a.ig{padding-left:.2em}
-  .navbar nav a.ig svg{width:17px;height:17px}
-}
 .ig-cta{display:inline-flex;align-items:center;gap:.75em;margin-top:clamp(20px,3vw,28px);
   border:1px solid var(--rule);padding:.9em 1.8em;color:var(--moon);text-decoration:none;
   font-size:.9rem;letter-spacing:.14em;transition:border-color .3s,color .3s,background .3s}
 .ig-cta svg{width:16px;height:16px;flex:none}
 .ig-cta:hover,.ig-cta:focus-visible{border-color:var(--gold);color:#fff;background:rgba(227,193,116,.1)}
 
+.lead-name{margin-top:clamp(14px,2.2vw,20px);color:#fff;font-weight:700;
+  font-size:clamp(1.5rem,6vw,2.15rem);letter-spacing:.28em;text-indent:.28em;line-height:1.8;
+  text-shadow:0 0 30px rgba(245,233,200,.28)}
+.lead-name + .lead-jp{margin-top:clamp(34px,5vw,54px)}
 .welcome{margin-top:clamp(42px,6.4vw,68px);color:var(--gold);
   font-size:clamp(1.04rem,3vw,1.26rem);letter-spacing:.24em;text-indent:.24em;line-height:2}
 
 /* ---------- 軌跡（月詠祭内） ---------- */
 .trace-wrap{margin-top:clamp(72px,11vw,130px)}
 .trace-wrap .sub-t{margin-bottom:clamp(34px,5vw,52px)}
+
+
+
+
+/* ---------- 満ちるまで（カウントダウン） ---------- */
+#countdown{padding-block:clamp(80px,12vw,140px)}
+.moon-wrap{position:relative;display:flex;justify-content:center}
+.moon-wrap::before{content:"";position:absolute;left:50%;top:50%;
+  transform:translate(-50%,-50%);width:clamp(215px,55vw,300px);aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,rgba(2,6,18,.93) 0%,rgba(2,6,18,.74) 46%,rgba(2,6,18,0) 74%)}
+.moonfig{position:relative;z-index:1}
+.moonfig{position:relative;z-index:1;width:clamp(118px,30vw,168px);height:auto;display:block;
+  filter:drop-shadow(0 0 26px rgba(245,233,200,.16))}
+#moonlit{transition:d .8s ease}
+.moon-name{margin-top:clamp(20px,3vw,28px);color:var(--moon);
+  font-size:clamp(1.06rem,3.2vw,1.28rem);letter-spacing:.24em;text-indent:.24em}
+.moon-age{margin-top:.7em;color:var(--mist);font-family:var(--f-num);
+  font-size:clamp(1rem,2.6vw,1.14rem);letter-spacing:.14em;font-variant-numeric:tabular-nums}
+.moon-age small{font-family:var(--f-jp);font-size:.68em;letter-spacing:.18em;margin-left:.7em;color:var(--gold-dp)}
+.cd-rule{display:flex;align-items:center;justify-content:center;gap:clamp(14px,3vw,22px);
+  margin-top:clamp(34px,5vw,48px)}
+.cd-rule i{display:block;width:clamp(42px,12vw,88px);height:1px;
+  background:linear-gradient(90deg,transparent,var(--rule),transparent)}
+.cd-rule svg{width:11px;height:11px;color:var(--gold-dk);fill:currentColor;flex:none}
+.cd-label{margin-top:clamp(30px,4.4vw,42px);color:var(--gold);
+  font-size:.88rem;letter-spacing:.28em;text-indent:.28em}
+.cd-num{margin-top:clamp(16px,2.4vw,22px);display:flex;flex-wrap:wrap;
+  justify-content:center;align-items:baseline;gap:.2em 1.1em}
+.cd-num .u{color:var(--mist);font-size:.8rem;letter-spacing:.14em;white-space:nowrap}
+.cd-num b{font-family:var(--f-num);font-weight:500;color:#fff;
+  font-size:clamp(2.3rem,10vw,3.4rem);letter-spacing:.02em;margin-right:.16em;
+  font-variant-numeric:tabular-nums;text-shadow:0 0 30px rgba(245,233,200,.22)}
+.cd-foot{margin-top:clamp(26px,3.8vw,36px);color:var(--mist);
+  font-size:.84rem;letter-spacing:.14em;line-height:2}
+#countdown.is-now .cd-num{display:none}
+#countdown.is-now .cd-label{font-size:clamp(1.2rem,4.6vw,1.7rem);color:var(--moon);
+  font-weight:700;letter-spacing:.2em}
+
+/* ---------- 月詠ticket ---------- */
+.tkt{width:min(560px,100%);margin:clamp(42px,6vw,64px) auto 0;text-align:left}
+.tkt-steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;
+  gap:clamp(18px,2.6vw,24px)}
+.tkt-steps li{display:grid;grid-template-columns:2.4em 1fr;gap:1em;align-items:baseline;
+  border-top:1px solid var(--rule-soft);padding-top:clamp(18px,2.6vw,24px)}
+.tkt-steps .no{font-size:1.02rem;letter-spacing:.1em;color:var(--gold)}
+.tkt-steps .b{color:var(--paper);font-size:.96rem;line-height:2.1}
+.tkt-steps b{display:block;font-weight:600;color:var(--moon);font-size:1.06rem;
+  letter-spacing:.14em;margin-bottom:.45em}
+.tkt-note{margin-top:clamp(26px,3.8vw,34px);color:var(--gold);font-size:.84rem;
+  letter-spacing:.08em;line-height:2.1;text-align:center}
+
+/* ---------- ドネーション ---------- */
+#donation .lead-jp{margin-bottom:clamp(44px,6vw,68px)}
+.dona-use{width:min(560px,100%);margin-inline:auto;text-align:center;
+  border-block:1px solid var(--rule-soft);padding-block:clamp(22px,3.2vw,30px)}
+.dona-use .c{color:var(--gold);font-size:.86rem;letter-spacing:.18em}
+.dona-use ul{list-style:none;margin:1.2em 0 0;padding:0;display:flex;flex-wrap:wrap;
+  justify-content:center;gap:.6em 2em}
+.dona-use li{color:var(--moon);font-size:1rem;letter-spacing:.1em}
+.dona-say{margin-top:clamp(42px,6.4vw,68px);width:min(620px,100%);margin-inline:auto}
+.dona-say p{color:var(--paper);font-size:clamp(1rem,2.6vw,1.14rem);line-height:2.5;letter-spacing:.1em}
+.dona-say p + p{margin-top:clamp(26px,3.8vw,36px)}
+.dona-say .last{color:var(--moon);font-weight:600;
+  font-size:clamp(1.1rem,3.4vw,1.32rem);letter-spacing:.14em;line-height:2.3}
+.dona-ready{margin-top:clamp(26px,3.8vw,34px);color:var(--gold);font-size:.86rem;
+  letter-spacing:.1em;line-height:2.1}
+.dona-ways{display:grid;grid-template-columns:1fr;gap:clamp(18px,2.6vw,24px);
+  width:min(960px,100%);margin:clamp(38px,5.4vw,56px) auto 0}
+.way{background:var(--panel);border:1px solid var(--rule-soft);
+  padding:clamp(24px,3.6vw,32px) clamp(20px,3vw,28px);text-align:center;
+  display:flex;flex-direction:column;gap:.55em}
+.way .no{font-size:.92rem;letter-spacing:.2em;color:var(--gold-dk)}
+.way .t{font-weight:600;color:var(--moon);font-size:clamp(1.14rem,4vw,1.28rem);letter-spacing:.14em}
+.way .s{font-size:.84rem;letter-spacing:.12em;color:var(--mist)}
+.way-body{margin-top:clamp(14px,2vw,18px);padding-top:clamp(14px,2vw,18px);
+  border-top:1px solid var(--rule-soft);display:grid;gap:.7em;place-items:center}
+.way-body .blank{color:var(--ember);font-size:.84rem;line-height:2;letter-spacing:.04em;
+  border:1px dashed rgba(217,160,110,.5);padding:.9em 1em;width:100%}
+.dona-foot{margin-top:clamp(34px,5vw,48px);line-height:2.2}
+@media (min-width:820px){.dona-ways{grid-template-columns:repeat(3,1fr);align-items:stretch}
+  .way{height:100%}}
 
 /* ---------- 結び ---------- */
 .closing{padding-block:clamp(110px,16vw,210px)}
@@ -511,10 +593,10 @@ fill="currentColor" stroke="none"><path d="M15960 6890 c0 -5 -9 -10 -20 -10 -11 
   </button>
   <nav class="navmenu" id="navmenu" aria-label="サイト内リンク">
     <a href="#about">月詠祭<span class="en">ABOUT</span></a>
-    <a href="#artists">出演<span class="en">ARTISTS</span></a>
-    <a href="#timetable">タイムテーブル<span class="en">TIME TABLE</span></a>
+    <a href="#vol3">月詠祭2026<span class="en">VOL.3</span></a>
     <a href="#access">アクセス<span class="en">ACCESS</span></a>
-    <a class="ig" href="https://www.instagram.com/tsukuyomimatsuri/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ig"/></svg>Instagram</a>
+    <a href="#donation">祭を応援<span class="en">SUPPORT</span></a>
+    <a class="ig" href="https://www.instagram.com/tsukuyomimatsuri/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ig"/></svg><b>お問い合わせ</b><em>公式 Instagram へ</em></a>
   </nav>
 </div>
 
@@ -541,28 +623,54 @@ fill="currentColor" stroke="none"><path d="M15960 6890 c0 -5 -9 -10 -20 -10 -11 
 
 <main>
 
+<!-- ============================== 満ちるまで ============================== -->
+<section id="countdown" aria-live="polite">
+  <div class="wrap narrow mid">
+    <div class="moon-wrap">
+      <svg class="moonfig" viewBox="-60 -60 120 120" role="img" aria-label="今宵の月">
+        <defs>
+          <radialGradient id="mglow" cx="50%" cy="50%" r="50%">
+            <stop offset="55%" stop-color="rgba(245,233,200,.22)"/>
+            <stop offset="100%" stop-color="rgba(245,233,200,0)"/>
+          </radialGradient>
+          <radialGradient id="mdark" cx="38%" cy="34%" r="72%">
+            <stop offset="0%" stop-color="#13253C"/>
+            <stop offset="100%" stop-color="#060F1F"/>
+          </radialGradient>
+        </defs>
+        <circle cx="0" cy="0" r="57" fill="url(#mglow)"/>
+        <circle cx="0" cy="0" r="42" fill="url(#mdark)" stroke="rgba(227,193,116,.20)" stroke-width=".8"/>
+        <path id="moonlit" d="" fill="#F5E9C8"/>
+      </svg>
+    </div>
+
+    <p class="moon-name" id="moonName">—</p>
+    <p class="moon-age"><span id="moonAge">—</span><small>月齢</small></p>
+
+    <div class="cd-rule" aria-hidden="true"><i></i><svg viewBox="0 0 16 16"><use href="#hanabishi"/></svg><i></i></div>
+
+    <p class="cd-label" id="cdLabel">開催まで</p>
+    <p class="cd-num" id="cdNum">
+      <span class="u"><b>—</b>日</span><span class="u"><b>—</b>時間</span><span class="u"><b>—</b>分</span>
+    </p>
+    <p class="cd-foot" id="cdFoot">満月の刻　2026.9.27　01:49</p>
+  </div>
+</section>
+
 <!-- ============================== 月詠祭 ============================== -->
 <section id="about" class="quiet">
   <div class="wrap narrow mid">
     <h2 class="sec-t">月詠祭</h2>
     <div class="orn" aria-hidden="true"><i></i><svg viewBox="0 0 16 16"><use href="#hanabishi"/></svg><i></i></div>
+    <p class="lead-jp">満月の夜、神出鬼没に現れる祭、</p>
+    <p class="lead-name">月詠祭</p>
     <p class="lead-jp">
-      月を詠み、火に祈る。<br>
-      音は魂をひらき、踊りは境界をほどいていく。
+      今宵の舞台は、成田空港のど真ん中に<br>
+      今も尚、在り続ける地、木の根。<br>
+      世界へ飛び立つ空の下、<br>
+      音に集い、火を囲み踊り、月を仰ぐ。
     </p>
-    <p class="lead-jp">
-      神は、空から降ろすものではない。<br>
-      己の内に宿る八百万を、呼び醒ますもの。
-    </p>
-    <p class="lead-jp">
-      ここでは、演者も、出店者も、来場者もない。<br>
-      集う者すべてが、祭人。
-    </p>
-    <p class="lead-jp">
-      それぞれの命が響き合い、<br>
-      まだ見ぬ祭を創り出す。
-    </p>
-    <p class="welcome">月詠の世界へようこそ</p>
+    <p class="welcome">この地で、この夜だけの祭がひらく。</p>
   </div>
 
   <div class="wrap trace-wrap">
@@ -603,8 +711,13 @@ fill="currentColor" stroke="none"><path d="M15960 6890 c0 -5 -9 -10 -20 -10 -11 
     </p>
   </div>
 
-  <div class="wrap" style="margin-top:clamp(56px,8vw,92px)">
-    <h3 class="sub-t mid">開催概要</h3>
+</section>
+
+<!-- ============================== 開催概要 ============================== -->
+<section id="info" class="quiet">
+  <div class="wrap">
+    <h2 class="sec-t mid">開催概要</h2>
+    <div class="orn" aria-hidden="true"><i></i><svg viewBox="0 0 16 16"><use href="#hanabishi"/></svg><i></i></div>
     <dl class="facts">
       <div><dt>日程</dt><dd>2026年9月26日（土）— 9月27日（日）<small>26日 13:00 開場、27日 20:00 終了</small></dd></div>
       <div><dt>会場</dt><dd>木の根ペンション<small>千葉県成田市木の根 296-1</small></dd></div>
@@ -731,9 +844,10 @@ fill="currentColor" stroke="none"><path d="M15960 6890 c0 -5 -9 -10 -20 -10 -11 
 </section>
 
 <!-- ============================== 八百万市 ============================== -->
-<section class="sub quiet">
+<section id="market" class="quiet">
   <div class="wrap">
-    <h3 class="sub-t mid">八百万市</h3>
+    <h2 class="sec-t mid">八百万市</h2>
+    <div class="orn" aria-hidden="true"><i></i><svg viewBox="0 0 16 16"><use href="#hanabishi"/></svg><i></i></div>
     <div class="yao">
       <div>
         <p class="c">飲食</p>
@@ -755,10 +869,43 @@ fill="currentColor" stroke="none"><path d="M15960 6890 c0 -5 -9 -10 -20 -10 -11 
   </div>
 </section>
 
-<!-- ============================== 月結びの儀 ============================== -->
-<section class="sub">
+<!-- ============================== 月詠ticket ============================== -->
+<section id="ticket">
   <div class="wrap narrow mid">
-    <h3 class="sub-t">月結びの儀</h3>
+    <h2 class="sec-t">月詠ticket</h2>
+    <div class="orn" aria-hidden="true"><i></i><svg viewBox="0 0 16 16"><use href="#hanabishi"/></svg><i></i></div>
+
+    <p class="lead-jp">
+      この祭のあいだ、お金はかたちを変えます。
+    </p>
+    <p class="lead-jp">
+      円のままなら、それは支払いです。<br>
+      月詠ticketに持ち替えたとき、同じ一枚が、<br>
+      演者へ、出店者へ、場を創る人へと巡りはじめる。
+    </p>
+    <p class="welcome">買うのではなく、手渡す。<br>消えるのではなく、巡る。</p>
+
+    <div class="tkt">
+      <ol class="tkt-steps">
+        <li>
+          <span class="no">一</span>
+          <span class="b"><b>受け取る</b>会場で、月詠ticketに持ち替えます。</span>
+        </li>
+        <li>
+          <span class="no">二</span>
+          <span class="b"><b>使う</b>八百万市の飲食・物販で、そのまま使えます。</span>
+        </li>
+      </ol>
+      <p class="tkt-note">引き換え場所、利用できる店舗、当日の取り扱いは、決まりしだいこのページと Instagram でお知らせします。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== 月結びの儀 ============================== -->
+<section id="wish">
+  <div class="wrap narrow mid">
+    <h2 class="sec-t">月結びの儀</h2>
+    <div class="orn" aria-hidden="true"><i></i><svg viewBox="0 0 16 16"><use href="#hanabishi"/></svg><i></i></div>
     <p class="lead-jp">
       竹に、一人ひとりの願いを記します。<br>
       願いを宿した竹は、祭の間、月明かりの下に飾られます。
@@ -772,37 +919,6 @@ fill="currentColor" stroke="none"><path d="M15960 6890 c0 -5 -9 -10 -20 -10 -11 
       それぞれの祈りを未来へ結ぶ。
     </p>
     <p class="welcome">月詠祭を締めくくる、祈りの儀</p>
-  </div>
-</section>
-
-<!-- ============================== 月詠ticket・ドネーション ============================== -->
-<section class="sub quiet">
-  <div class="wrap narrow mid">
-    <h3 class="sub-t">月詠ticket・ドネーション</h3>
-    <p class="lead-jp sm">
-      月詠祭は、入場無料で開催します。<br>
-      皆さまから届いた想いは、月詠ticketとして祭の中を巡り、<br>
-      出演者、出店者、場を創る人々を支える力になります。
-    </p>
-    <p class="lead-jp sm">
-      またこの祭に来たい。<br>
-      この景色を未来へ残したい。<br>
-      そう感じた方は、ドネーションで力を貸してください。
-    </p>
-  </div>
-</section>
-
-<!-- ============================== 注意事項 ============================== -->
-<section class="sub">
-  <div class="wrap narrow">
-    <h3 class="sub-t mid">注意事項</h3>
-    <ul class="notes">
-      <li>夜通しの祭です。秋の夜は、思っているより冷えます。羽織るものと、足元を照らすあかりを持ってきてください。</li>
-      <li>会場には火があります。焚き火も、松明も、生きた火です。お子さまと一緒の方は、少しだけ気にかけてください。</li>
-      <li>ゴミは持ち帰ってください。来たときよりきれいにして、この土地を返したいのです。</li>
-      <li>音に身をあずける時間も、黙って月を見上げる時間もあります。どちらも、この祭の時間です。</li>
-      <li>会場に一般来場者用の駐車場はありません。徒歩、タクシー、公共交通機関にてお越しください。</li>
-    </ul>
   </div>
 </section>
 
@@ -848,6 +964,78 @@ fill="currentColor" stroke="none"><path d="M15960 6890 c0 -5 -9 -10 -20 -10 -11 
 </section>
 
 
+<!-- ============================== 注意事項 ============================== -->
+<section id="notes" class="quiet">
+  <div class="wrap narrow">
+    <h2 class="sec-t mid">注意事項</h2>
+    <div class="orn" aria-hidden="true"><i></i><svg viewBox="0 0 16 16"><use href="#hanabishi"/></svg><i></i></div>
+    <ul class="notes">
+      <li>夜通しの祭です。秋の夜は、思っているより冷えます。羽織るものと、足元を照らすあかりを持ってきてください。</li>
+      <li>会場には火があります。焚き火も、松明も、生きた火です。お子さまと一緒の方は、少しだけ気にかけてください。</li>
+      <li>ゴミは持ち帰ってください。来たときよりきれいにして、この土地を返したいのです。</li>
+      <li>音に身をあずける時間も、黙って月を見上げる時間もあります。どちらも、この祭の時間です。</li>
+      <li>会場に一般来場者用の駐車場はありません。徒歩、タクシー、公共交通機関にてお越しください。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================== ドネーション ============================== -->
+<section id="donation" class="quiet">
+  <div class="wrap">
+    <h2 class="sec-t mid">ドネーション</h2>
+    <div class="orn" aria-hidden="true"><i></i><svg viewBox="0 0 16 16"><use href="#hanabishi"/></svg><i></i></div>
+
+    <p class="lead-jp mid">
+      月詠祭は、入場無料で開催します。<br>
+      木戸銭のかわりに、集う人の気持ちで成り立つ祭です。
+    </p>
+
+    <div class="dona-use">
+      <p class="c">届いた想いは、この祭を創る人たちへ</p>
+      <ul>
+        <li>出演者</li>
+        <li>出店者</li>
+        <li>場を創る人々</li>
+      </ul>
+    </div>
+
+    <div class="dona-say mid">
+      <p>金額は、決めていません。<br>決めた瞬間に、それは料金になってしまうから。</p>
+      <p>火は、薪がなければ消えます。<br>音も、灯りも、誰かが運んでいます。</p>
+      <p class="last">あなたが置いていくものが、<br>次の夜の火になります。</p>
+    </div>
+
+    <div class="dona-ways">
+
+      <article class="way">
+        <p class="no">一</p>
+        <p class="t">PayPay</p>
+        <p class="s">いますぐ、スマホで</p>
+      </article>
+
+      <article class="way">
+        <p class="no">二</p>
+        <p class="t">銀行振込</p>
+        <p class="s">事前に、確実に</p>
+      </article>
+
+      <article class="way">
+        <p class="no">三</p>
+        <p class="t">当日、会場で</p>
+        <p class="s">現金で、直接</p>
+      </article>
+
+    </div>
+
+    <p class="dona-ready mid">受付方法の詳細は、決まりしだいこのページと Instagram でお知らせします。</p>
+
+    <p class="note mid dona-foot">
+      ドネーションは任意です。<br>
+      いただかなくても、この祭はあなたを歓迎します。
+    </p>
+  </div>
+</section>
+
 <!-- ============================== 結び ============================== -->
 <section class="closing">
   <div class="wrap narrow mid">
@@ -890,6 +1078,7 @@ fill="currentColor" stroke="none"><path d="M15960 6890 c0 -5 -9 -10 -20 -10 -11 
     <p class="f-contact">
       <a href="https://www.instagram.com/tsukuyomimatsuri/" target="_blank" rel="noopener">Instagram @tsukuyomimatsuri</a>
       <a href="mailto:tsukuyomimatsuri8@gmail.com">tsukuyomimatsuri8@gmail.com</a>
+      <a href="#donation">ドネーション</a>
     </p>
     <p class="fine">
       2026.9.26 — 27 ／ 入場無料 ／ 雨天決行（警報発表時は中止）<br>
@@ -909,6 +1098,82 @@ fill="currentColor" stroke="none"><path d="M15960 6890 c0 -5 -9 -10 -20 -10 -11 
     window.addEventListener('scroll', show, { passive: true });
     window.addEventListener('resize', show);
   }
+})();
+
+/* 月の暦とカウントダウン */
+(function () {
+  var svgPath = document.getElementById('moonlit');
+  if (!svgPath) return;
+  var elName = document.getElementById('moonName'),
+      elAge  = document.getElementById('moonAge'),
+      elLab  = document.getElementById('cdLabel'),
+      elNum  = document.getElementById('cdNum'),
+      elFoot = document.getElementById('cdFoot'),
+      sec    = document.getElementById('countdown');
+
+  var SYN = 29.530588853;                       // 朔望月
+  var NEW = Date.UTC(2000, 0, 6, 18, 14);       // 基準の新月
+  var OPEN = new Date('2026-09-26T13:00:00+09:00').getTime();
+  var FULL = new Date('2026-09-27T01:49:00+09:00').getTime();
+  var END  = new Date('2026-09-27T20:00:00+09:00').getTime();
+  var R = 42;
+
+  var NAMES = [
+    [1,'新月'],[6,'三日月'],[9,'上弦の月'],[13,'十三夜の月'],[14.5,'小望月'],
+    [16,'満月'],[17.5,'十六夜の月'],[21,'寝待月'],[24,'下弦の月'],[27.5,'有明の月'],[99,'晦の月']
+  ];
+
+  function age(t) { var a = ((t - NEW) / 86400000) % SYN; return a < 0 ? a + SYN : a; }
+
+  function litPath(k, waxing) {
+    if (k <= 0.005) return '';
+    if (k >= 0.995) return 'M0,-' + R + 'A' + R + ',' + R + ' 0 1,1 0,' + R + 'A' + R + ',' + R + ' 0 1,1 0,-' + R + 'Z';
+    var a = R * (1 - 2 * k), rx = Math.abs(a).toFixed(2);
+    var outer = waxing ? 1 : 0;                 // 満ちゆく＝右が光る
+    var inner = (a > 0) === waxing ? 0 : 1;   // SVG は y 下向きのため掃引方向が反転する
+    return 'M0,-' + R + 'A' + R + ',' + R + ' 0 0,' + outer + ' 0,' + R +
+           'A' + rx + ',' + R + ' 0 0,' + inner + ' 0,-' + R + 'Z';
+  }
+
+  function two(n) { return n < 10 ? '0' + n : '' + n; }
+
+  function tick() {
+    var now = Date.now(), a = age(now);
+    var k = (1 - Math.cos(2 * Math.PI * a / SYN)) / 2;
+    var waxing = a < SYN / 2;
+
+    svgPath.setAttribute('d', litPath(k, waxing));
+    for (var i = 0; i < NAMES.length; i++) { if (a < NAMES[i][0]) { elName.textContent = NAMES[i][1]; break; } }
+    elAge.textContent = a.toFixed(1);
+
+    if (now >= END) {
+      sec.classList.add('is-now');
+      elLab.textContent = '月詠祭 Vol.3 は幕を閉じました。';
+      elFoot.textContent = 'また、月が満ちる頃に。';
+      return;
+    }
+    if (now >= OPEN) {
+      sec.classList.add('is-now');
+      elLab.textContent = '月詠祭、開催中。';
+      if (now < FULL) {
+        var m = Math.floor((FULL - now) / 60000);
+        elFoot.textContent = '満月の刻まで あと ' + Math.floor(m / 60) + ' 時間 ' + two(m % 60) + ' 分';
+      } else {
+        elFoot.textContent = '月は満ちました。';
+      }
+      return;
+    }
+    var d = OPEN - now;
+    var dd = Math.floor(d / 86400000),
+        hh = Math.floor(d / 3600000) % 24,
+        mm = Math.floor(d / 60000) % 60;
+    elNum.innerHTML = '<span class="u"><b>' + dd + '</b>日</span>' +
+                      '<span class="u"><b>' + two(hh) + '</b>時間</span>' +
+                      '<span class="u"><b>' + two(mm) + '</b>分</span>';
+  }
+
+  tick();
+  setInterval(tick, 30000);
 })();
 
 /* メニュー開閉 */
